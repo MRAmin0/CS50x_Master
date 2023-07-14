@@ -9,4 +9,5 @@ int main(void)
         h = get_int("h : ")
     }
     while (h < 1 || h > 8)
+    for (int i = 0 )
 }
