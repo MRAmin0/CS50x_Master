@@ -9,13 +9,6 @@ int calculate_pennies(int cents);
 
 int main(void)
 {
-    int start;
-    do
-    {
-        start = get_int("Start size: ");
-    }
-    while (start <= 0);
-
 
     // Ask how many cents the customer is owed
     int cents = get_cents();
@@ -45,8 +38,17 @@ int main(void)
 
 int get_cents(void)
 {
-    // TODO
-    return 0;
+    // get cents from user with validation
+    int cents;
+    do
+    {
+        cents = get_int("Change owed: ");
+    }
+    while (cents < 0);
+
+
+    // return cents to function
+    return cents;
 }
 
 int calculate_quarters(int cents)
@@ -57,6 +59,7 @@ int calculate_quarters(int cents)
 
 int calculate_dimes(int cents)
 {
+    while 
     // TODO
     return 0;
 }
