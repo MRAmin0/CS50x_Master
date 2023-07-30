@@ -14,7 +14,7 @@ int main(void)
     {
         start = get_int("Start size: ");
     }
-    while (start < 9);
+    while (start <= 0);
 
 
     // Ask how many cents the customer is owed
