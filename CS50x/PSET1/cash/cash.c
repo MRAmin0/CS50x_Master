@@ -46,7 +46,6 @@ int get_cents(void)
     }
     while (cents < 0);
 
-
     // return cents to function
     return cents;
 }
@@ -61,12 +60,12 @@ int calculate_quarters(int cents)
         count++;
     }
     // return the amount of quarters
+
     return count;
-
-
+}
 
 int calculate_dimes(int cents)
-    {
+{
     int count = 0;
     while (cents > 10)
     {
@@ -79,7 +78,7 @@ int calculate_dimes(int cents)
 
 int calculate_nickels(int cents)
 {
-     // count the amount of cents
+    // count the amount of cents
     int count = 0;
     while (cents > 5)
     {
@@ -92,7 +91,7 @@ int calculate_nickels(int cents)
 
 int calculate_pennies(int cents)
 {
-     // count the amount of cents
+    // count the amount of cents
     int count = 0;
     while (cents > 1)
     {
