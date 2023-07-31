@@ -53,15 +53,22 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
+    // count the amount of cents
+    int count = 0;
+    while (cents > 25)
+    {
+        cents -= 25;
+        count++;
+    }
+
+    return count;
     // TODO
     return 0;
 }
 
 int calculate_dimes(int cents)
 {
-    while 
-    // TODO
-    return 0;
+
 }
 
 int calculate_nickels(int cents)
