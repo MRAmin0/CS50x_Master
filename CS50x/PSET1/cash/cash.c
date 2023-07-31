@@ -45,7 +45,6 @@ int get_cents(void)
         cents = get_int("Change owed: ");
     }
     while (cents < 0);
-
     // return cents to function
     return cents;
 }
@@ -60,7 +59,6 @@ int calculate_quarters(int cents)
         count++;
     }
     // return the amount of quarters
-
     return count;
 }
 
@@ -72,7 +70,6 @@ int calculate_dimes(int cents)
         cents -= 10;
         count++;
     }
-
     return count;
 }
 
