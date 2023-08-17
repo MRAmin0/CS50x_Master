@@ -24,11 +24,11 @@ int main(void)
             j++;
         }
 
-        for (int k = BITS_IN_BYTE - 1; k <= 0; k--)
+        for (int k = BITS_IN_BYTE - 1; k >= 0; k--)
         {
             print_bulb(binary[k]);
         }
-        
+        printf("\n");
     }
 }
 
