@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <ctype.h>
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 int main(void)
 {
@@ -30,7 +30,6 @@ int main(void)
         }
     }
 
-
     float L = 100 * (l / w);
     float S = 100 * (s / w);
 
@@ -41,11 +40,10 @@ int main(void)
     }
     else if (index < 1)
     {
-        printf("Before Grade 1\n" , index);
+        printf("Before Grade 1\n", index);
     }
     else
     {
-        printf("Grade %i\n",index);
+        printf("Grade %i\n", index);
     }
-
 }
