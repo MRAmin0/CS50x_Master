@@ -1,6 +1,6 @@
 #include <cs50.h>
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #include <string.h>
 
 // Max voters and candidates
@@ -16,8 +16,7 @@ typedef struct
     string name;
     int votes;
     bool eliminated;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX_CANDIDATES];
@@ -130,7 +129,7 @@ bool vote(int voter, int rank, string name)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(name, candidates[i].name) == 0)
+        if (strcmp(name, candidates[i].name) == 0)
         {
             preferences[voter][rank] = i;
             return true;
@@ -146,7 +145,7 @@ void tabulate(void)
     for (int i = 0; i < voter_count; i++)
     {
         int rank = 0;
-        while(true)
+        while (true)
         {
             int cand = preferences[i][rank];
             if (candidates[cand].eliminated)
@@ -167,14 +166,14 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    int high = round(voter_count /2 );
+    int high = round(voter_count / 2);
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > high)
-            {
-                printf("%s\n",candidates[i].name);
-                return true;
-            }
+        {
+            printf("%s\n", candidates[i].name);
+            return true;
+        }
     }
     return false;
 }
@@ -184,7 +183,7 @@ int find_min(void)
 {
     // TODO
     int min = candidates[0].votes;
-    for (int i = 0; i < candidate_count ; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes < min && candidates[i].eliminated == false)
         {
@@ -200,8 +199,8 @@ bool is_tie(int min)
     // TODO
     int remain = candidate_count;
     int tievote = 0;
-     for (int i = 0; i < candidate_count ; i++)
-     {
+    for (int i = 0; i < candidate_count; i++)
+    {
 
         if (candidates[i].eliminated)
         {
@@ -211,11 +210,11 @@ bool is_tie(int min)
         {
             tievote++;
         }
-     }
-     if (remain == tievote)
-     {
+    }
+    if (remain == tievote)
+    {
         return true;
-     }
+    }
     return false;
 }
 
@@ -223,13 +222,13 @@ bool is_tie(int min)
 void eliminate(int min)
 {
     // TODO
-    for (int i = 0; i < candidate_count ; i++)
-     {
+    for (int i = 0; i < candidate_count; i++)
+    {
 
         if (candidates[i].votes == min)
         {
             candidates[i].eliminated = true;
         }
-     }
+    }
     return;
 }
