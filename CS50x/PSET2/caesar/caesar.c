@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int key = atio(argv[1]);
 
 int main(int argc, string argv[])
 {
@@ -29,7 +28,7 @@ int main(int argc, string argv[])
 
     char co;
     int nn = strlen(plain);
-    //char cipher[nn];
+    // char cipher[nn];
 
     for (int j = 0; j < nn; j++)
     {
@@ -47,10 +46,8 @@ int main(int argc, string argv[])
         {
             co = c;
         }
-        printf("%c",co);
+        printf("%c", co);
     }
     printf("\n");
     return 0;
-
-
 }
