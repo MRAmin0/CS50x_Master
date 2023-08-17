@@ -1,8 +1,8 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
 How do you know?: TODO
 
