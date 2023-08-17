@@ -77,6 +77,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue =(rowplace[width - j - 1].rgbtBlue);
         }
     }
+    return ;
 }
 
 // Blur image
