@@ -98,7 +98,7 @@ void print_winner(void)
             printf("Vote: %s \n",candidates[i].name);
         }
     }
-    printf("%d \n",mv);
+    printf("%i \n",mv);
 
     return;
 }
