@@ -11,43 +11,46 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
     int n = strlen(argv[1]);
     for (int i = 0; i < n; i++)
     {
-        // Exit if find alphabet
-        if (isalpha(argv[i][i]))
+        if (!isdigit(argv[1][i]))
         {
             printf("Usage: ./caesar key\n");
             return 1;
         }
     }
 
-    string plain = get_string("plaintext:  ");
-    // atoi : convert string to int
-    int key = atoi(argv[1]);
+    string plain = get_string("plaintext: ");
+    int key = atoi(argv[1]) % 26;
 
-    char co;
-    int nn = strlen(plain);
-    // char cipher[nn];
+    printf("ciphertext: ");
 
-    for (int j = 0; j < nn; j++)
+    for (int j = 0, nn = strlen(plain); j < nn; j++)
     {
-        int c = plain[j];
+        char c = plain[j];
+        char co;
+
         if (isalpha(c))
         {
-            co = c + key % 26;
-
-            if (!(islower(co) || isupper(co)))
+            if (islower(c))
             {
-                co -= 26;
+                co = 'a' + (c - 'a' + key) % 26;
+            }
+            else
+            {
+                co = 'A' + (c - 'A' + key) % 26;
             }
         }
         else
         {
             co = c;
         }
+
         printf("%c", co);
     }
+
     printf("\n");
     return 0;
 }
