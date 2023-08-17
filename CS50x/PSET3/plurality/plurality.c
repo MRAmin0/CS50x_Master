@@ -67,6 +67,14 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(candidate[i].name,name) == 0)
+        {
+            candidate[i].vote += 1;
+            return true;
+        }
+    }
     return false;
 }
 
@@ -74,5 +82,13 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+    int mv;
+    for (int i =0; i < candidate_count; i++)
+    {
+        if (candiates[i].votes > mv)
+        {
+            mv = candidates[i].votes;
+        }
+    }
     return;
 }
