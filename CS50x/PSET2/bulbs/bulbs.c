@@ -9,7 +9,7 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    string message = get_string("Message: ")
+    string message = get_string("Message: ");
     int n = strlen(message);
     for (int i = 0;i < n; i++)
     {
@@ -19,15 +19,16 @@ int main(void)
         int j = 0;
         while (decimal > 0)
         {
-            binary[j] = deciaml % 2;
+            binary[j] = decimal % 2;
             decimal = decimal / 2;
             j++;
         }
 
         for (int k =BITS_IN_BYTE -1 ; k <= 0; k--)
         {
-            
+            print_bulb(binary[k]);
         }
+        printf("\n");
 
 
     }
