@@ -26,7 +26,6 @@ int main(int argc, string argv[])
     // atoi : convert string to int
     int key = atio(argv[1]);
 
-    printf("ciphertext: ");
     char co;
     int nn = strlen(plain);
     char cipher[nn];
