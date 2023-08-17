@@ -1,5 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -111,7 +113,6 @@ int main(int argc, string argv[])
             }
             break;
         }
-
         // Eliminate anyone with minimum number of votes
         eliminate(min);
 
@@ -123,7 +124,6 @@ int main(int argc, string argv[])
     }
     return 0;
 }
-
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
@@ -156,7 +156,7 @@ void tabulate(void)
             else
             {
                 candidates[cand].votes++;
-                
+                break;
             }
         }
     }
@@ -167,6 +167,15 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
+    int high = round(voter_count /2 );
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > high)
+            {
+                printf("%s\n",candidates[i].name);
+                return true;
+            }
+    }
     return false;
 }
 
@@ -174,13 +183,39 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
-    return 0;
+    int min = candidates[0].votes;
+    for (int i = 0; i < candidate_count ; i++)
+    {
+        if (candidates[i].votes < min && candidates[i].eliminated == false)
+        {
+            min = candidates[i].votes;
+        }
+    }
+    return min;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
     // TODO
+    int remain = candidate_count;
+    int tievote = 0;
+     for (int i = 0; i < candidate_count ; i++)
+     {
+
+        if (candidates[i].eliminated)
+        {
+            remain--;
+        }
+        else if (candidates[i].votes == min)
+        {
+            tievote++;
+        }
+     }
+     if (remain == tievote)
+     {
+        return true;
+     }
     return false;
 }
 
@@ -188,5 +223,13 @@ bool is_tie(int min)
 void eliminate(int min)
 {
     // TODO
+    for (int i = 0; i < candidate_count ; i++)
+     {
+
+        if (candidates[i].votes == min)
+        {
+            candidates[i].eliminated = true;
+        }
+     }
     return;
 }
