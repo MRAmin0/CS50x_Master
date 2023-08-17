@@ -26,7 +26,7 @@ int main(void)
         }
         if (text[i] == 46 || text[i] == 33 || text[i] == 63)
         {
-
+            s++;
         }
     }
 
@@ -34,7 +34,7 @@ int main(void)
     float L = 100 * (l / w);
     float S = 100 * (s / w);
 
-    float index = round(0.0588 * L - 0.296 * S - 15.8);
-    printf("%f\n" , index);
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
+    printf("%i\n" , index);
 
 }
