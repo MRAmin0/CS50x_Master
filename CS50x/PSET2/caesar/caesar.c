@@ -48,7 +48,7 @@ int main(int argc, string argv[])
         }
         cipher[j] = ci;
     }
-    printf("%s \n",ci);
+    printf("ciphertext: %s \n",ci);
     return 0;
 
 
