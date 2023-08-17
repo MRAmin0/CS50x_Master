@@ -11,11 +11,16 @@ int main(int argc, string argv[])
     int n = trlen(argv[1]);
     for (int i = 0;i < n; i++)
     {
-        // m
+        // Exit if find alphabet
         if (isalpha(argv[i][i]))
         {
             printf("Usage: ./caesar key\n");
             return 1;
         }
     }
+
+    string plain = get_string("plaintext:  ");
+    int key = atio(argv[1]);
+
+
 }
