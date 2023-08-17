@@ -48,7 +48,7 @@ int main(int argc, string argv[])
             co = c;
         }
 
-        printf("%c", co);
+        printf("ciphertext: %c", co);
     }
 
     printf("\n");
