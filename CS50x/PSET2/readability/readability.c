@@ -2,34 +2,39 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int main(void)
 {
     string text = get_string("Text: ");
 
-    float letter = 0;
-    float word = 1;
-    float sentence = 0;
+    float l = 0;
+    float w = 1;
+    float s = 0;
     int n = strlen(text);
     for (int i = 0; i < n; i++)
     {
         if (isalpha(text[i]) != 0)
         {
-            letter++;
+            l++;
         }
         // if (text[i] >= '97' && text[i] <= '122' || text[i] >= '65' && text[i] <= '90' )
 
         if (text[i] == 32)
         {
-            word++;
+            w++;
         }
         if (text[i] == 46 || text[i] == 33 || text[i] == 63)
         {
+
         }
     }
 
 
+    float L = 100 * (l / w);
+    float S = 100 * (s / w);
 
+    float index = round(0.0588 * L - 0.296 * S - 15.8);
+    printf("%f\n" , index);
 
-   
 }
