@@ -16,7 +16,14 @@ int main(void)
         {
             l++;
         }
-        if (text[i] == )
+        // if (text[i] >= '97' && text[i] <= '122' || text[i] >= '65' && text[i] <= '90' )
+
+
+        if (text[i] == 32)
+        {
+            w++;
+        }
+
     }
-    printf("l = %i\n", l);
+    printf("l = %i    w = %i\n",l,w);
 }
