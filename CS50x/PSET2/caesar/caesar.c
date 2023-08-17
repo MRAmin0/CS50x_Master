@@ -47,7 +47,11 @@ int main(int argc, string argv[])
         {
             co = c;
         }
+        cipher[j] = ci;
     }
+    printf("%s \n",ci);
+    return 0;
+
 
 
 
