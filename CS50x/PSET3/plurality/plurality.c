@@ -90,5 +90,13 @@ void print_winner(void)
             mv = candidates[i].votes;
         }
     }
+
+    for (int i = 0;  i < candiate_count; i++)
+    {
+        if(candidates[i].votes == mv)
+        {
+            printf("")
+        }
+    }
     return;
 }
