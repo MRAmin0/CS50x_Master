@@ -24,7 +24,7 @@ int main(int argc, string argv[])
 
     string plain = get_string("plaintext:  ");
     // atoi : convert string to int
-    int key = atio(argv[1]);
+    int key = atoi(argv[1]);
 
     char co;
     int nn = strlen(plain);
