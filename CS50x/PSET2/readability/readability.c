@@ -1,7 +1,7 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int main(void)
 {
@@ -9,13 +9,12 @@ int main(void)
 
     int l = 0;
     int n = strlen(text);
-    for (int i = 0; i <n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if (isalpha(text[i] == 1 ) || isalpha(text[i]) == 2)
+        if (isalpha(text[i]) != 0)
         {
             l++;
         }
     }
-    printf("l= %i\n",l);
-
+    printf("l = %i\n", l);
 }
