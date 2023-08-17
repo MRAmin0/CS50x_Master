@@ -11,9 +11,9 @@ int main(void)
     // TODO
     string message = get_string("Message: ");
     int n = strlen(message);
-    for (int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        int binary[] ={0, 0, 0, 0, 0, 0, 0, 0};
+        int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
         int decimal = message[i];
 
         int j = 0;
@@ -24,13 +24,11 @@ int main(void)
             j++;
         }
 
-        for (int k =BITS_IN_BYTE -1 ; k <= 0; k--)
+        for (int k = BITS_IN_BYTE - 1; k <= 0; k--)
         {
             print_bulb(binary[k]);
         }
         printf("\n");
-
-
     }
 }
 
