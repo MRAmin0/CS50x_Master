@@ -35,6 +35,17 @@ int main(void)
     float S = 100 * (s / w);
 
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-    printf("%i\n" , index);
+    if (index >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if (index < 1)
+    {
+        printf("before Grade 1\n" , index);
+    }
+    else
+    {
+        printf("Index = %i\n",index);
+    }
 
 }
