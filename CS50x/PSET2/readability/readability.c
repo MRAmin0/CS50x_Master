@@ -16,6 +16,6 @@ int main(void)
             l++;
         }
     }
-    printf("l= %i",l);
+    printf("l= %i\n",l);
 
 }
