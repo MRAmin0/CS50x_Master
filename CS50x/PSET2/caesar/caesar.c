@@ -28,7 +28,7 @@ int main(int argc, string argv[])
 
     char co;
     int nn = strlen(plain);
-    char cipher[nn];
+    //char cipher[nn];
 
     for (int j = 0; j < nn; j++)
     {
@@ -46,24 +46,10 @@ int main(int argc, string argv[])
         {
             co = c;
         }
-        cipher[j] = ci;
+        printf("%c",co);
     }
-    printf("ciphertext: %s \n",co);
+    printf("\n");
     return 0;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
