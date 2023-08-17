@@ -68,7 +68,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             for (int j = 0; j < width; j++)
             {
-                rowplace[j] = iamge[i][j];
+                rowplace[j] = image[i][j];
             }
             for (int j = 0; j < height; j++)
             {
@@ -95,36 +95,34 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
-    {
+        {
             int counter = 0;
             float redsum = 0;
             float greensum = 0;
             float bluesum = 0;
-
-         for (int k = -1; k < 2; k++)
+        }
+    }
+    for (int k = -1; k < 2; k++)
+        {
+            for (int l = -1; l < 2; l++)
             {
-              for (int l = -1; l < 2; l++)
+                if(!(i+k < 0 || i+k >= height || j +l < 0 || j+ l >= width ))
                 {
-               if(!(i+k < 0 || i+k >= height || j +l < 0 || j+ l >= width ))
-               {
-                redsum+= copy[i+k][j+l].rgbtRed;
-                greensum+= copy[i+k][j+l].rgbtGreen;
-                bluesum+= copy[i+k][j+l].rgbtBlue;
-                counter++;
+                    redsum+= copy[i+k][j+l].rgbtRed;
+                    greensum+= copy[i+k][j+l].rgbtGreen;
+                    bluesum+= copy[i+k][j+l].rgbtBlue;
+                    counter++;
                 }
-            else
-            {
-                contiune;
             }
+            else
+                {
+                    continue;
+                }
 
         }
 
-    }
-    iamge[i][j].rgbtRed = (int)round(redsum / counter);
-    iamge[i][j].rgbtGreen = (int)round(greensum / counter);
-    iamge[i][j].rgbtBlue = (int)round(bluesum / counter);
-
-
-    }
-
 }
+    image[i][j].rgbtRed = (int)round(redsum / counter);
+    image[i][j].rgbtGreen = (int)round(greensum / counter);
+    image[i][j].rgbtBlue = (int)round(bluesum / counter);
+
