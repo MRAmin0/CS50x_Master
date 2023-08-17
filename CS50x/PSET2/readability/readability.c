@@ -7,23 +7,29 @@ int main(void)
 {
     string text = get_string("Text: ");
 
-    int l = 0;
-    int w = 0;
+    float letter = 0;
+    float word = 1;
+    float sentence = 0;
     int n = strlen(text);
     for (int i = 0; i < n; i++)
     {
         if (isalpha(text[i]) != 0)
         {
-            l++;
+            letter++;
         }
         // if (text[i] >= '97' && text[i] <= '122' || text[i] >= '65' && text[i] <= '90' )
 
-
         if (text[i] == 32)
         {
-            w++;
+            word++;
         }
-
+        if (text[i] == 46 || text[i] == 33 || text[i] == 63)
+        {
+        }
     }
-    printf("l = %i    w = %i\n",l,w);
+
+
+
+
+   
 }
