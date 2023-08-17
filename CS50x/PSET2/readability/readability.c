@@ -41,7 +41,7 @@ int main(void)
     }
     else if (index < 1)
     {
-        printf("before Grade 1\n" , index);
+        printf("Before Grade 1\n" , index);
     }
     else
     {
