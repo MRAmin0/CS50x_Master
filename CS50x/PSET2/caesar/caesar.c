@@ -11,7 +11,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    int n = trlen(argv[1]);
+    int n = strlen(argv[1]);
     for (int i = 0; i < n; i++)
     {
         // Exit if find alphabet
