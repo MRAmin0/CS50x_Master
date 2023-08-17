@@ -8,6 +8,7 @@ int main(void)
     string text = get_string("Text: ");
 
     int l = 0;
+    int w = 0;
     int n = strlen(text);
     for (int i = 0; i < n; i++)
     {
@@ -15,6 +16,7 @@ int main(void)
         {
             l++;
         }
+        if (text[i] == )
     }
     printf("l = %i\n", l);
 }
