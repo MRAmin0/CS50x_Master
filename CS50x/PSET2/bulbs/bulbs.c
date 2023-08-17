@@ -28,7 +28,7 @@ int main(void)
         {
             print_bulb(binary[k]);
         }
-        printf("\n");
+        
     }
 }
 
