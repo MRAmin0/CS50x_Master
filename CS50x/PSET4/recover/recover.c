@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         }
         else if (image != 0)
         {
-            FILE *imgf = fopen(filename =, "w");
+            FILE *imgf = fopen(filename, "w");
             fwrite(temp , 1 , 512 , imgf);
             fclose(imgf);
 
