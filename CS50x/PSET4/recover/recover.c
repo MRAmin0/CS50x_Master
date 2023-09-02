@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
     }
     while (fread (temp,sizeof(unsigned char), 512 , file))
     {
-        if (temp[0] ==0xff)
-    {
-        return 1;
-    }
+        if (temp[0] == 0xff && temp[1] == 0xd8 , temp[2]==0xff ,&& (temp[3] & 0xf0 == 0xe0));
+        {
+            
+        }
     }
 
 
