@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
             fwrite(temp, 1, 512, imgf);
             fclose(imgf);
             image++;
+            return 0;
         }
         else if (image != 0)
         {
@@ -42,8 +43,8 @@ int main(int argc, char *argv[])
             fclose(imgf);
         }
         free(temp);
+        fclose(drive);
         free(filename);
-        fclose(file);
         return 0;
     }
 }
