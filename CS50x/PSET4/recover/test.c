@@ -30,11 +30,10 @@ int main(int argc, char *argv[])
         if (temp[0] == 0xff && temp[1] == 0xd8 && temp[2] == 0xff && (temp[3] & 0xf0) == 0xe0)
         {
             sprintf(filename, "%03i.jpg", image);
-            FILE *imgf = fopen(filename, "a");
+            FILE *imgf = fopen(filename, "w");
             fwrite(temp, 1, 512, imgf);
             fclose(imgf);
             image++;
-            return 0;
         }
         else if (image != 0)
         {
@@ -42,9 +41,8 @@ int main(int argc, char *argv[])
             fwrite(temp, 1, 512, imgf);
             fclose(imgf);
         }
-        free(temp);
-        fclose(drive);
-        free(filename);
-        return 0;
     }
+    free(temp);
+    free(filename);
+    fclose(drive);
 }
