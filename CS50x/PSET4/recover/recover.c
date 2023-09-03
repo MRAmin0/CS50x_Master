@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     unsigned char *temp = malloc(512);
 
-    char *filename = malloc(8 * sizeof(int));
+    char *filename = malloc(8 *sizeof(char));
     if (filename == NULL)
     {
         return 1;
