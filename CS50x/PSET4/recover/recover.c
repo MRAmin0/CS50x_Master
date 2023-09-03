@@ -9,21 +9,23 @@ int main(int argc, char *argv[])
         return 1;
     }
     // OPEN FILE WITH MODE WRITE
-    FILE *file = fopen(argv[1], "r");
+    FILE *drive = fopen(argv[1], "r");
 
     unsigned char *temp = malloc(512);
-
-    char *filename = malloc(8 *sizeof(char));
-    if (filename == NULL)
-    {
-        return 1;
-    }
+    char *filename = malloc(8 * sizeof(char));
     int image = 0;
+
     if (temp == NULL)
     {
         return 1;
     }
-    while (fread(temp, sizeof(unsigned char), 512, file))
+
+    if (filename == NULL)
+    {
+        return 1;
+    }
+
+    while (fread(temp, sizeof(unsigned char), 512, drive))
     {
         if (temp[0] == 0xff && temp[1] == 0xd8 && temp[2] == 0xff && (temp[3] & 0xf0) == 0xe0)
         {
