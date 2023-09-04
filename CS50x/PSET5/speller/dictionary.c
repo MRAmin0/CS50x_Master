@@ -102,8 +102,8 @@ bool unload(void)
             node *temp = n;
             n = n->next;
             free(temp);
-            
-           // if (n == NULL && i == N - 1)
+
+           //if (n == NULL && i == N - 1)
             //{
                 return true;
             //}
