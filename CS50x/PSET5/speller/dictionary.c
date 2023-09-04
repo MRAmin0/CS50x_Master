@@ -2,12 +2,11 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
-
 
 #include "dictionary.h"
 
@@ -16,8 +15,7 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 100000;
@@ -33,14 +31,14 @@ bool check(const char *word)
 
     int hash_value = hash(word);
     node *n = table[hash_value];
-    //COMPARE TWO STRING
-    while(n != NULL)
+    // COMPARE TWO STRING
+    while (n != NULL)
     {
-        if(strcasecmp (word, n -> word) == 0)
+        if (strcasecmp(word, n->word) == 0)
         {
             return true;
         }
-        n =n -> next;
+        n = n->next;
     }
     return false;
 }
@@ -50,10 +48,9 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     long sum = 0;
-    for(int i = 0; i < strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-        sum+= tolower(word[i]);
-
+        sum += tolower(word[i]);
     }
     return sum % N;
 }
@@ -62,26 +59,25 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *dict_pointer = fopen(dictionary , "r");
+    FILE *dict_pointer = fopen(dictionary, "r");
     if (dictionary == NULL)
     {
-        printf("Unable to open %s\n",dictionary);
+        printf("Unable to open %s\n", dictionary);
         return false;
     }
     char next_word[LENGTH + 1];
-    while (fscanf(dict_pointer , "%s", next_word) != EOF)
+    while (fscanf(dict_pointer, "%s", next_word) != EOF)
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
         }
-        strcpy(n -> word , next_word);
+        strcpy(n->word, next_word);
         int hash_value = hash(next_word);
-        n -> next = table[hash_value];
+        n->next = table[hash_value];
         table[hash_value] = n;
         dict_size++;
-
     }
     fclose(dict_pointer);
 
@@ -98,15 +94,15 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for(int i = 0; i < N ; i++)
+    for (int i = 0; i < N; i++)
     {
         node *n = table[i];
-        while(n != NULL)
+        while (n != NULL)
         {
             node *temp = n;
-            n -> next;
+            n = n->next;
             free(temp);
-            if (n == NULL && i == N -1)
+            if (n == NULL && i == N - 1)
             {
                 return true;
             }
