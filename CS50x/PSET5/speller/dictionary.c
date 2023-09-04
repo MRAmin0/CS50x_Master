@@ -30,8 +30,18 @@ int dict_size = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
 
+    int hash_value = hash(word);
+    node *n = table[hash_value];
+    //COMPARE TWO STRING
+    while(n != NULl)
+    {
+        if(strcasecmp (word, n -> word) == 0)
+        {
+            return true;
+        }
+        n =n -> next;
+    }
     return false;
 }
 
@@ -88,6 +98,19 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
+    for(int i = 0; i < N ; i++)
+    {
+        node *n = table[i];
+        while(n != NULL)
+        {
+            node *temp = n;
+            n -> next;
+            free(temp);
+        }
+    }
+    if (n == NULL && i == N -1)
+    {
+        return true;
+    }
     return false;
 }
