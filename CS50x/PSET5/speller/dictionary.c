@@ -34,7 +34,7 @@ bool check(const char *word)
     int hash_value = hash(word);
     node *n = table[hash_value];
     //COMPARE TWO STRING
-    while(n != NULl)
+    while(n != NULL)
     {
         if(strcasecmp (word, n -> word) == 0)
         {
@@ -62,7 +62,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *dict_pointer = fopen(dictionary , "r")
+    FILE *dict_pointer = fopen(dictionary , "r");
     if (dictionary == NULL)
     {
         printf("Unable to open %s\n",dictionary);
@@ -71,14 +71,14 @@ bool load(const char *dictionary)
     char next_word[LENGTH + 1];
     while (fscanf(dict_pointer , "%s", next_word) != EOF)
     {
-        note *n = malloc(sizeof(node));
+        node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
         }
         strcpy(n -> word , next_word);
         int hash_value = hash(next_word);
-        n -> nexet = table[hash_value];
+        n -> next = table[hash_value];
         table[hash_value] = n;
         dict_size++;
 
@@ -106,11 +106,12 @@ bool unload(void)
             node *temp = n;
             n -> next;
             free(temp);
+            if (n == NULL && i == N -1)
+            {
+                return true;
+            }
         }
     }
-    if (n == NULL && i == N -1)
-    {
-        return true;
-    }
+
     return false;
 }
