@@ -16,4 +16,14 @@ for i, digit in enumerate(card):
         digitodd = digit *2
         if digitodd > 9:
             odds += int(digitodd /10) + digitodd % 10
-        
+        else:
+            odds += digitodd
+    else:
+        evens += digit
+
+sum = evens + odds
+
+start = int(cardnum[0:2])
+cardlen = len(cardnum)
+s
+
