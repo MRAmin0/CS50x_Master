@@ -35,5 +35,8 @@ if sld == 0:
         print("MASTERCARD")
     elif (int(cardnum[0]) == 4) and cardlen in [13, 16]:
         print("VISA")
+    else:
+        print("INVALID")
+
 else:
     print("INVALID")
