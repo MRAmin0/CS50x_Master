@@ -17,7 +17,7 @@ while cents > 0:
     elif cents > 10:
         cents -= 10
     elif cents >= 5:
-        cents -= 4
+        cents -= 5
     else:
         cents -= 1
     coin += 1
