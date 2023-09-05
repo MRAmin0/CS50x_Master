@@ -70,7 +70,7 @@ bool load(const char *dictionary)
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
-       {
+        {
             return true;
         }
         strcpy(n->word, next_word);
@@ -102,7 +102,6 @@ bool unload(void)
             node *temp = n;
             n = n->next;
             free(temp);
-
         }
     }
 
