@@ -9,7 +9,6 @@ N = 10
 
 
 def main():
-
     # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
@@ -26,8 +25,8 @@ def main():
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
-    for simulation in range (N):
-        teamwin =  simulate_tournament(teams)
+    for simulation in range(N):
+        teamwin = simulate_tournament(teams)
         if teamwin in counts:
             counts[teamwin] = counts[teamwin] + 1
         else:
@@ -63,7 +62,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     rounds = len(teams)
-    if rounds >= 2 :
+    if rounds >= 2:
         teams = simulate_round(teams)
         return simulate_tournament(teams)
     else:
