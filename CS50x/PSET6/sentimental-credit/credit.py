@@ -9,4 +9,11 @@ while True
 evens = 0
 odds = 0
 
-card 
+card = reversed([int(digit) for digit in cardnum])
+# charkhidan be tedad monaseb
+for i, digit in enumerate(card):
+    if (i + 1) % 2 == 0:
+        digitodd = digit *2
+        if digitodd > 9:
+            odds += int(digitodd /10) + digitodd % 10
+        
