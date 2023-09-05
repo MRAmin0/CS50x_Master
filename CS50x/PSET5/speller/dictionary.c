@@ -102,8 +102,6 @@ bool unload(void)
             node *temp = n;
             n = n->next;
             free(temp);
-            
-            return true;
 
         }
     }
