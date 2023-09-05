@@ -20,7 +20,7 @@ while cents > 0:
         cents -= 5
     else:
         cents -= 1
-coin += 1
+    coin += 1
 
 
 print(coin)
