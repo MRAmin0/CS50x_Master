@@ -6,10 +6,5 @@ while True:
         break
     else:
         continue
-    for i in range(a):
-        print("#" * (i + 1))
-        
-
-
-
-
+for i in range(a):
+    print(" " * (a - (i + 1)), "#" * (i + 1))
