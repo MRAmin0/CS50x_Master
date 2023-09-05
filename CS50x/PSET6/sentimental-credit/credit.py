@@ -1,5 +1,5 @@
 from cs50 import get_string
-while True
+while True:
     cardnum = get_string("Number: ")
     if cardnum.isnumeric():
         break
@@ -25,5 +25,14 @@ sum = evens + odds
 
 start = int(cardnum[0:2])
 cardlen = len(cardnum)
-s
+sld = sum % 10
 
+if sld == 0:
+    if start in [34,37] and cardlen == 15:
+        print("AMERICAN EXPRESS")
+    elif (start in range (51,56) and cardlen == 16):
+        print("MASTERCARD")
+    elif ((int(cardnum[0]) == 4) and cardlen in [13,16]):
+        print("VISA")
+else:
+    print("INVALID")
