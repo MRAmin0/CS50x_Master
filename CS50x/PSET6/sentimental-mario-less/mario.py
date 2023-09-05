@@ -7,4 +7,4 @@ while True:
     else:
         continue
 for i in range(a):
-    print(" " * (a - (i + 1)), "#" * (i + 1))
+    print(" " * (a - (i + 1)) + "#" * (i + 1))
