@@ -7,5 +7,5 @@ FROM
 WHERE
   YEAR = "2010"
 ORDER BY
-  rating desc,
+  rating DESC,
   title
