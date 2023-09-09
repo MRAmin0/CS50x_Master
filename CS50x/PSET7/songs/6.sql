@@ -9,5 +9,5 @@ WHERE
     FROM
       artists
     WHERE
-      name = = "Post Malone"
+      name == "Post Malone"
   )

@@ -9,5 +9,5 @@ WHERE
     FROM
       artists
     WHERE
-      name = = "Drake"
+      name == "Drake"
   )
