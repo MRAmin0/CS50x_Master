@@ -13,9 +13,9 @@ sentences = 0
 for j in text:
     if j == '.' or j == '?' or j == '!':
         sentences += 1
-wordsentence = words / 100
-L = letters / wordsentence
-S = sentences / wordsentence
+wordsentence = (words / 100)
+L = (letters / wordsentence)
+S = (sentences / wordsentence)
 index = round(0.588 * L - 0.296 * S - 15.8)
 if index < 1:
     print("Before Grade 1")
