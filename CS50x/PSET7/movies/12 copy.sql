@@ -15,10 +15,9 @@ WHERE
         FROM
           people
         WHERE
-          name = "Bradely Cooper"
+          name = "Bradley Cooper"
       )
   )
-  -- hampooshani ya noghte talaghi
 INTERSECT
 SELECT
   title
