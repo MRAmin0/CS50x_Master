@@ -1,5 +1,6 @@
 import string
 from cs50 import get_string
+
 # get user text
 text = get_string("Text: ")
 
@@ -17,7 +18,7 @@ for i in text:
         sentences += 1
 
 # Coleman-Liau Index
-index = 0.588 * (letters*words*100) - 0.296 * (sentences/words*100) - 15.8
+index = 0.588 * (letters * words * 100) - 0.296 * (sentences / words * 100) - 15.8
 
 
 if index < 1:
@@ -25,23 +26,7 @@ if index < 1:
 elif index >= 16:
     print("Grade 16+")
 else:
-    print("Grade ",round(index))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print("Grade ", round(index))
 
 
 # # remove space in word
