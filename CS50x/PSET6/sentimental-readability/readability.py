@@ -1,15 +1,19 @@
 import string
 from cs50 import get_string
-
+# get user text
 text = get_string("Text: ")
+
 letters = 0
+words = 0
+sentences = 0
+
+# count number of letters words and sentences
 for i in text:
     if i.isalpha():
         letters += 1
 
 # remove space in word
 words = len(text.split())
-sentences = 0
 for j in text:
     if j == "." or j == "?" or j == "!":
         sentences += 1
