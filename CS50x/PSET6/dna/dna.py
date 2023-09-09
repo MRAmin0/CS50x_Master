@@ -28,7 +28,7 @@ def main():
     # TODO: Check database for matching profiles
     for person in database:
         match = 0
-         for subsequence in subsequences:
+           for subsequence in subsequences:
             if int (person[subsequence] == result[subsequence]):
                 match += 1
         if match == len(subsequences):
