@@ -5,12 +5,17 @@ FROM
 WHERE
   id IN (
     SELECT DISTINCT
-      stars.person_id
+      directors.person_id
     FROM
-      stars
-      JOIN movies ON movies.id = stars.movie_id
+      directors
+      JOIN movies ON movies.id = directors.movie_id
     WHERE
-      YEAR = "2004"
+      id IN (
+        SELECT
+          movie_id
+        FROM
+          ratings
+        WHERE
+          rating > = "9.0"
+      )
   )
-ORDER BY
-  birth
