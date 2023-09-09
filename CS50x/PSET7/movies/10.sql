@@ -16,6 +16,6 @@ WHERE
         FROM
           ratings
         WHERE
-          rating > = "9.0"
+          rating >= "9.0"
       )
   )
