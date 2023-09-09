@@ -23,7 +23,7 @@ WHERE
               people
             WHERE
               name = "Kevin Bacon"
-              AND birthday = "1958"
+              AND birth = "1958"
           )
       )
   )
