@@ -1,6 +1,6 @@
 SELECT
   title,
-  raitng
+  rating
 FROM
   movies
   JOIN ratings ON movies.id = rating.movie_id

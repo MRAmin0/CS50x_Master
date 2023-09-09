@@ -3,4 +3,4 @@ SELECT
 FROM
   movies
 WHERE
-  YEAR = = "2008"
+  YEAR = "2008"

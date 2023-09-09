@@ -9,5 +9,5 @@ WHERE
     FROM
       movies
     WHERE
-      YEAR = = "2012"
+      YEAR =  "2012"
   )
