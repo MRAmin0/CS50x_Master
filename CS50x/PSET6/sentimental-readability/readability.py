@@ -17,30 +17,13 @@ for i in text:
     elif i == "." or i == "!" or i == "?":
         sentences += 1
 
+L = 100 * (letters / words)
+S = 100 * (sentences / words)
 # Coleman-Liau Index
-index = 0.588 * (letters * words * 100) - 0.296 * (sentences / words * 100) - 15.8
-
-
-if index < 1:
-    print("Before Grade 1")
-elif index >= 16:
+index = round(0.0588 * L - 0.296 * S - 15.8)
+if index >= 16:
     print("Grade 16+")
+elif index < 1:
+    print("Before Grade 1")
 else:
-    print("Grade ", round(index))
-
-
-# # remove space in word
-# words = len(text.split())
-# for j in text:
-#     if j == "." or j == "?" or j == "!":
-#         sentences += 1
-# wordsentence = words / 100
-# L = letters / wordsentence
-# S = sentences / wordsentence
-# index = round(0.588 * L - 0.296 * S - 15.8)
-# if index < 1:
-#     print("Before Grade 1")
-# elif index >= 16:
-#     print("Grade 16+")
-# else:
-#     print(f"Grade {index}")
+    print(f"Grade {index}")
