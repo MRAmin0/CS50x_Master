@@ -9,4 +9,7 @@ WHERE
   AND MONTH = 7
   AND DAY = 28
   AND street = 'Humphrey Street'
-  
+
+
+--- checking the interviews with people
+select name, transcript
