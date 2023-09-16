@@ -1,9 +1,12 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
-
 -- checking the events on the given date and street
-select description
-from crime_scene_reports
-where year = 2021
-and month = 7
-and day = 28
-and street = 'Humphrey Street'
+SELECT
+  description
+FROM
+  crime_scene_reports
+WHERE
+  YEAR = 2021
+  AND MONTH = 7
+  AND DAY = 28
+  AND street = 'Humphrey Street'
+  
