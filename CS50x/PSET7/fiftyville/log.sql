@@ -13,3 +13,4 @@ WHERE
 
 --- checking the interviews with people
 select name, transcript
+from interviews
