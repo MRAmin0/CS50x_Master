@@ -1,6 +1,5 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
-
--- checking the events on the given date and street
+-- Checking the events on the given date and street
 SELECT
   description
 FROM
@@ -11,7 +10,7 @@ WHERE
   AND DAY = 28
   AND street = 'Humphrey Street';
 
--- checking the interviews with people
+-- Checking the interviews with people
 SELECT
   name,
   transcript
@@ -21,3 +20,13 @@ WHERE
   YEAR = 2021
   AND MONTH = 7
   AND DAY = 28;
+
+--We found two transcripts with name 'Eugene' , So lets check how many Eugene do we have
+SELECT
+  name
+FROM
+  people
+WHERE
+  name = 'Eugene'
+
+-- 
