@@ -28,29 +28,34 @@ FROM
   people
 WHERE
   name = 'Eugene'
-
--- Found out we have one Eugene
--- So lets find out the name of three witnesses that hvae talken about 'bakery' on July 28, 2021
---and also sort it by a-z
-
-select name, transcript
-from interviews
-where year = 2021
-and month = 7
-and day = 28
-and transcript like '%bakery%'
-order by name;
+  -- Found out we have one Eugene
+  -- So lets find out the name of three witnesses that hvae talken about 'bakery' on July 28, 2021
+  --and also sort it by a-z
+SELECT
+  name,
+  transcript
+FROM
+  interviews
+WHERE
+  YEAR = 2021
+  AND MONTH = 7
+  AND DAY = 28
+  AND transcript LIKE '%bakery%'
+ORDER BY
+  name;
 
 -- Witnesses are Eugene , Raymond , and Ruth.
-
 --Find the people that have withdraw transaction on Leggett Street
-select account_number, amount
-from atm_transactions
-where year = 2021
-and month = 7
-and day = 28
-and atm_location = 'Legget Street'
-and transaction_type = 'withdraw';
+SELECT
+  account_number,
+  amount
+FROM
+  atm_transactions
+WHERE
+  YEAR = 2021
+  AND MONTH = 7
+  AND DAY = 28
+  AND atm_location = 'Legget Street'
+  AND transaction_type = 'withdraw';
 
 --
-
