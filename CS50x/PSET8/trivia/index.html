@@ -18,7 +18,10 @@
             }
             function resetBtn(){
                 var btns = document.querySelectorAll(".button");
-                btns.clas
+                btns.forEach(function (btn)){
+                btn.classList.remove('incorrect');
+                btn.classList.remove('correct');
+                };
             }
         </script>
     </head>
