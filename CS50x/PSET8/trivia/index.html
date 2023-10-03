@@ -7,6 +7,19 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+            function corChecker(correct, element){
+                if(correct)
+                {
+                    document.getElementById(element).innerHTML="Correct!";
+                }
+                else{
+                    document.getElementById(element).innerHTML="Incorrect";
+                }
+            }
+            function resetBtn(){
+                var btns = document.querySelectorAll(".button");
+                btns.clas
+            }
         </script>
     </head>
     <body>
