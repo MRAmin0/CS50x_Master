@@ -18,11 +18,26 @@
             }
             function resetBtn(){
                 var btns = document.querySelectorAll(".button");
-                btns.forEach(function (btn)){
+                btns.forEach(function (btn){
                 btn.classList.remove('incorrect');
                 btn.classList.remove('correct');
-                };
+                });
             }
+
+            function answerGet(){
+                resetBtn();
+                if (event.target.id == "correct"){
+                    event.target.classList.add('correct');
+                    corChecker(true , "mltc");
+                }
+                else {
+                    event.target.classList.add('incorrect');
+                    corChecker(false, "mltc");
+                }
+
+            }
+
+
         </script>
     </head>
     <body>
