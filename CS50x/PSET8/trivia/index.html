@@ -33,6 +33,11 @@
                     event.target.classList.add('incorrect');
                     corChecker(false, "mltc");
                 }
+                let correctOption = document.querySelector(".correct");
+                correctOption.addEventListener("click", function() {
+                    correctOption.style.backgroundColor = "green";
+                });
+
 
 
             }
