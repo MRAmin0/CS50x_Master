@@ -45,10 +45,10 @@
                 inputField = document.querySelector('input');
                 checkButton = document.querySelector("#check");
                 checkButton.addEventListener('click', function(evt) {
-                    if (inputField.value.toLowerCase() != "MR Amin") {
-                        corChecker(false, "piano");
-                    } else {
+                    if (inputField.value.toLowerCase() == "amin") {
                         corChecker(true, "piano");
+                    } else {
+                        corChecker(false, "piano");
                     }
                 });
             });
