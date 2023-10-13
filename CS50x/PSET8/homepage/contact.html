@@ -21,7 +21,7 @@
                         <ul>
                             <li><a href="about.html">About</a></li>
                             <li><a href="projects.html">Projects</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.html" class="active-menu">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -29,72 +29,62 @@
         </header>
 
         <main>
-            <section class="home-about animation">
-                <div class="container justify-content-center">
-                    <div class="row animation">
-                        <div class="col-6 mr-auto">
-                            <p>Hello World, I'm</p>
-                            <h1>Amin !</h1>
-                            <h4>CS50 Student And Junior Web Developer</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Etiam cursus dignissim nulla, non mollis nibh rutrum ac.
-                                Aliquam interdum nunc ac eleifend ultricies.Quisque consequat porta luctus.
-                                Sed viverra efficitur diam.Duis pretium, nunc eu
-                                aliquam ullamcorper, ex augue congue magna, vitae dignissim velit purus non magna.
-                                Nulla maximus elementum tempus Vestibulum
-                                tempor gravida magna et commodo. Mauris sem massa, tempor sed eleifend vel, ornare vel est.Nullam consequat at nisl vel
-                                dignissim.
-                            </p>
-                            <div class="text-center">
-                                <a href="about.html" class="btn">About Me</a>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <img src="img/small.svg" alt="About Me">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section clas="home-projects animation-2">
+            <section class="contact-form">
                 <div class="container">
-                    <h2>Recent Projects</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-4"><img src="img/project.svg" alt="project">
-                            <div class="col-6">
-                                <h3>AI With Python</h3>
-                                <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</P>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-md-3 mx-auto">
+                            <h2>Contact Us</h2>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" maxlenght="40" size="40">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" maxlenght="40" size="40">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" maxlenght="40" size="40">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" cols="40"></textarea>
+                            <button type="submit" class="btn">Send</button>
+                        </div>
+                    </section>
+                    <section clas="home-projects animation-2">
+                        <div class="container">
+                            <h2>Recent Projects</h2>
+                            <div class="row justify-content-center">
+                                <div class="col-4"><img src="img/project.svg" alt="project">
+                                    <div class="col-6">
+                                        <h3>AI With Python</h3>
+                                        <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <footer>
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-3 mr-auto">
+                                <p>&copy; Amin Monajati 2023</p>
+                            </div>
+
+                            <div class="social-newtwokrs">
+                                <a href="https://github.com/mramin0" target="_blank"><img src="img/github.img" alt="Github"></a>
+                                <a href="https://t.me/mramin0" target="_blank"><img src="img/telegram.img" alt="Telegram"></a>
+                                <a href="https://www.linkedin.com/mramin0" target="_blank"><img src="img/github.img" alt="Linkedin"></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
 
-        <footer>
-            <div class="container">
+                </footer>
+                <script>
+                    $(".animation").delay(100).animate({
+                        opacity: 1
+                    }, 700);
+                    $(".animation-2").delay(1000).animate({
+                        opacity: 1
+                    }, 700);
+                </script>
+            </body>
 
-                <div class="row">
-                    <div class="col-3 mr-auto">
-                        <p>&copy; Amin Monajati 2023</p>
-                    </div>
-
-                    <div class="social-newtwokrs">
-                        <a href="https://github.com/mramin0" target="_blank"><img src="img/github.img" alt="Github"></a>
-                        <a href="https://t.me/mramin0" target="_blank"><img src="img/telegram.img" alt="Telegram"></a>
-                        <a href="https://www.linkedin.com/mramin0" target="_blank"><img src="img/github.img" alt="Linkedin"></a>
-                    </div>
-                </div>
-            </div>
-
-        </footer>
-        <script>
-            $(".animation").delay(100).animate({
-                opacity: 1
-            }, 700);
-            $(".animation-2").delay(1000).animate({
-                opacity: 1
-            }, 700);
-        </script>
-    </body>
-
-</html>
+        </html>
