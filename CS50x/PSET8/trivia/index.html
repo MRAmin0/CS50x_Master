@@ -29,14 +29,20 @@
                 if (event.target.id == "correct") {
                     event.target.classList.add('correct');
                     corChecker(true, "mltc");
-                } else {
-                    event.target.classList.add('incorrect');
-                    corChecker(false, "mltc");
-                }
-                let correctOption = document.querySelector(".correct");
+                    let correctOption = document.querySelector(".correct");
                 correctOption.addEventListener("click", function() {
                     correctOption.style.backgroundColor = "green";
                 });
+
+                } else {
+                    event.target.classList.add('incorrect');
+                    corChecker(false, "mltc");
+                    let correctOption = document.querySelector(".incorrect");
+                correctOption.addEventListener("click", function() {
+                    correctOption.style.backgroundColor = "red";
+                });
+
+                }
 
 
 
