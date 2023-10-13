@@ -30,21 +30,15 @@
                     event.target.classList.add('correct');
                     corChecker(true, "mltc");
                     let correctOption = document.querySelector(".correct");
-                correctOption.addEventListener("click", function() {
+                    correctOption.addEventListener("click", function() {
                     correctOption.style.backgroundColor = "green";
-                });
+                    });
 
                 } else {
                     event.target.classList.add('incorrect');
                     corChecker(false, "mltc");
-                    let correctOption = document.querySelector(".incorrect");
-                correctOption.addEventListener("click", function() {
-                    correctOption.style.backgroundColor = "red";
-                });
 
                 }
-
-
 
             }
             document.addEventListener("DOMContentLoaded", function(event) {
@@ -77,7 +71,7 @@
                 <h2>Part 1: Multiple Choice</h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
-                <h3>Who is the best programming teacher in the world?/</h3>
+                <h3>Who is the best programming teacher in the world?</h3>
                 <h2 id="mltc"></h2>
                 <button class="button">Ken Goldberg</button>
                 <button class="button">Lake Hamilton</button>
