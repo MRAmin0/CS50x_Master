@@ -8,7 +8,6 @@ a.btn:hover{
   background-color: green;
   color : white;
   transform : scale(1.2);
-  animation: ease;
 }
 div.social-networks{
   transform: scale(0.5);
