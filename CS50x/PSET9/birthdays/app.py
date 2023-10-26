@@ -38,7 +38,11 @@ def index():
         if not inputmonth:
             message = "Please Enter Month ! "
         else:
-            db.execute("INSERT INTO birthdays(name,month,day) VALUES")
+            db.execute("INSERT INTO birthdays(name,month,day) VALUES(?,?,?)",
+                       inputname,
+                       inputmonth,
+                       inputday,
+                       )
         return redirect("/")
 
     else:
