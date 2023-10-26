@@ -26,17 +26,17 @@ def after_request(response):
 def index():
     if request.method == "POST":
         # TODO: Add the user's entry into the database
-        # mesaage = "Hi"
+        mesaage = ""
         inputname = request.form.get("name")
         inputmonth = request.form.get("month")
         inputday = request.form.get("day")
-        # if not inputname:
-        #     message = "Please Enter A Name ! "
-        # if not inputday:
-        #     message = "Please Enter A Day ! "
-        # if not inputmonth:
-        #     message = "Please Enter Month ! "
-        # else:
+        if not inputname:
+            message = "Please Enter A Name ! "
+        if not inputday:
+            message = "Please Enter A Day ! "
+        if not inputmonth:
+            message = "Please Enter Month ! "
+        else:
             db.execute("INSERT INTO birthdays(name,month,day) VALUES(?,?,?)",inputname,inputmonth,inputday)
             return redirect("/")
 
