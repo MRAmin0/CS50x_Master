@@ -32,13 +32,13 @@ def index():
         inputday = request.form.get("day")
         if not inputname:
             message = "Please Enter A Name ! "
-        if not inputday:
+        elif not inputday:
             message = "Please Enter A Day ! "
-        if not inputmonth:
+        elif not inputmonth:
             message = "Please Enter Month ! "
         else:
             db.execute("INSERT INTO birthdays(name,month,day) VALUES(?,?,?)",inputname,inputmonth,inputday)
-            return redirect("/")
+
 
     else:
         # TODO: Display the entries in the database on index.html
