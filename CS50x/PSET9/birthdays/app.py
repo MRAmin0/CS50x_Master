@@ -38,7 +38,8 @@ def index():
             message = "Please Enter Month ! "
         else:
             db.execute("INSERT INTO birthdays(name,month,day) VALUES(?,?,?)",inputname,inputmonth,inputday)
-
+            birthdays = db.execute("SELECT * FROM birthdays")
+            retrun render_template("index.html", message = message , birthdays = birthdays)
 
     else:
         # TODO: Display the entries in the database on index.html
