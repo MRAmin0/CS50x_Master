@@ -232,7 +232,60 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    return apology("TODO")
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+
+        # Check for empty fields
+        if any(not field for field in [username, password, confirmation]):
+            return apology("Fields cannot be empty!")
+
+        # Ensure username is at least 4 characters long
+        if len(username) < 4:
+            return apology("Username must be at least 4 characters long!", 403)
+
+        # Ensure username consists only of characters and digits
+        if not username.isalnum():
+            return apology("Username must contain only characters and digits!", 403)
+
+        # Ensure password is stronger (has characters, digits, symbols)
+        if len(password) < 8:
+            return apology("Password must be at least 8 characters long!", 403)
+        if (
+            not re.search("[a-zA-Z]", password)
+            or not re.search("[0-9]", password)
+            or not re.search("[!@#$%^&*()]", password)
+        ):
+            return apology("Password must contain characters, digits and symbols!", 403)
+
+        # Check for password to be the same
+        if password != confirmation:
+            return apology("Passwords do not match!", 400)
+
+        # Make sure the name isn't registered already or the field is empty
+        if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
+            return apology("Username already taken!", 400)
+
+        # Hash password
+        hashed_password = generate_password_hash(password)
+        # Add username & hashed password in the database
+        db.execute(
+            "INSERT INTO users (username, hash) VALUES (?, ?)",
+            username,
+            hashed_password,
+        )
+
+        # Remember which user has logged in
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        session["user_id"] = rows[0]["id"]
+
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
