@@ -40,7 +40,38 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+       user_id = session["user_id"]
+    portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
+    cash_left = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+
+    # Getting the amount of cash the user has left to spend
+    if cash_left and "cash" in cash_left[0]:
+        cash_left = float(cash_left[0]["cash"])
+    else:
+        cash_left = 0.0
+
+    total_amount = cash_left
+
+    # Updating the current price and the overall stock value for each stock to be displayed in real time
+    try:
+        for stock in portfolio:
+            symbol = stock["symbol"]
+            stock_info = lookup(symbol)
+
+            current_price = float(stock_info["price"])
+            stock_value = current_price * stock["shares"]
+
+            stock.update({"current_price": current_price, "stock_value": stock_value})
+            total_amount += float(stock["stock_value"])
+    except (ValueError, LookupError):
+        return apology("Failed to update stock prices!")
+
+    return render_template(
+        "index.html",
+        portfolio=portfolio,
+        cash_left=cash_left,
+        total_amount=total_amount,
+    )
 
 
 @app.route("/buy", methods=["GET", "POST"])
