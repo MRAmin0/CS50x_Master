@@ -242,7 +242,7 @@ def register():
 
         # Check for empty fields
         if any(not field for field in [username, password, confirmation]):
-            return apology("Fields cannot be empty!", 403)
+            return apology("Fields cannot be empty!", 400)
 
         # Ensure username is at least 4 characters long
         if len(username) < 4:
