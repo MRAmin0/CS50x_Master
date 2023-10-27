@@ -3,7 +3,7 @@ import os
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
-from werkzeug.security import check_password_hash, generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from helpers import apology, login_required, lookup, usd, get_time, check_password
 from flask_session import Session
 
@@ -33,6 +33,7 @@ def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
+
     return response
 
 
@@ -40,7 +41,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-       user_id = session["user_id"]
+    user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
     cash_left = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
 
