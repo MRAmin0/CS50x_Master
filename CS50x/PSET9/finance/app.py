@@ -41,7 +41,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
+    """Show portfolio of stocks."""
 
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
@@ -80,7 +80,7 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
+    """Buy shares of stock."""
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
@@ -148,7 +148,7 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    """Show history of transactions"""
+    """Show history of transactions."""
 
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM history WHERE user_id = ?", user_id)
@@ -170,8 +170,8 @@ def login():
             return apology("Must provide username!", 403)
 
         # Ensure password was submitted
-        elif not request.form.get("password"):
-            return apology("Must provide password", 403)
+        if not request.form.get("password"):
+            return apology("Must provide password!", 403)
 
         # Query database for username
         rows = db.execute(
@@ -197,7 +197,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    """Log user out"""
+    """Log user out."""
 
     # Forget any user_id
     session.clear()
@@ -231,7 +231,7 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Register user"""
+    """Register user."""
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
@@ -291,7 +291,7 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
+    """Sell shares of stock."""
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
 
