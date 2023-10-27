@@ -292,7 +292,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-     user_id = session["user_id"]
+    user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
 
     # User reached route via POST (as by submitting a form via POST)
