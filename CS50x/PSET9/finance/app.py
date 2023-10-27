@@ -168,11 +168,11 @@ def login():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("Must provide username!", 403)
+            return apology("Must provide username!", 400)
 
         # Ensure password was submitted
         if not request.form.get("password"):
-            return apology("Must provide password!", 403)
+            return apology("Must provide password!", 400)
 
         # Query database for username
         rows = db.execute(
