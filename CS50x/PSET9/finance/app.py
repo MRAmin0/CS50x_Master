@@ -30,6 +30,7 @@ if not os.environ.get("API_KEY"):
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
+
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
@@ -41,6 +42,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
     cash_left = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
@@ -147,6 +149,7 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
+
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM history WHERE user_id = ?", user_id)
 
@@ -156,6 +159,7 @@ def history():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in."""
+
     # Forget any user_id
     session.clear()
 
@@ -163,11 +167,11 @@ def login():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("Must provide username!", 403)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("Must provide password", 403)
 
         # Query database for username
         rows = db.execute(
