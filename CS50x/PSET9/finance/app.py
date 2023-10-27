@@ -79,7 +79,68 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        user_id = session["user_id"]
+
+        symbol = request.form.get("symbol")
+        stock = lookup(symbol)
+        shares = request.form.get("shares")
+
+        # Checking for symbol to be valid
+        if not symbol or not stock:
+            return apology("Symbol is not valid!")
+
+        # Checking for shares number to be positive
+        if not shares.isdigit():
+            return apology("Number of shares must be a positive digit!")
+
+        transaction_value = int(shares) * stock["price"]
+        user_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        user_cash = user_cash[0]["cash"]
+
+        # Making sure user has enough cash to buy the shares
+        if user_cash < transaction_value + 1:
+            return apology("Not enough money!", 401)
+
+        # Perform the aquisition and update database
+        update_user_cash = user_cash - transaction_value
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", update_user_cash, user_id)
+
+        # Format balance
+        balance = f"${update_user_cash:,.2f} (-${transaction_value:,.2f})"
+
+        # Add transaction to portfolio database
+        db.execute(
+            "INSERT INTO portfolios (user_id, name, symbol, shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            user_id,
+            stock["name"],
+            symbol,
+            shares,
+            stock["price"],
+            stock["price"],
+            get_time(),
+            stock["price"],
+        )
+
+        # Add transaction to history database
+        db.execute(
+            "INSERT INTO history (user_id, name, symbol, shares, action, balance, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            user_id,
+            stock["name"],
+            symbol,
+            shares,
+            "BOUGHT",
+            balance,
+            get_time(),
+        )
+
+        flash(f"Successfully bought {shares} shares of {symbol}!")
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("buy.html")
 
 
 @app.route("/history")
