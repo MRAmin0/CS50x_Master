@@ -21,14 +21,14 @@
             </thead>
             <tbody>
                 {% for stock in portfolio %}
-                <tr class="table-light">
-                    <td>{{ stock["name"] }}</td>
-                    <td>{{ stock["symbol"] }}</td>
-                    <td>{{ stock["shares"] }}</td>
-                    <td>{{ stock["paid_price"] | usd }}</td>
-                    <td>{{ stock["current_price"] | usd }}</td>
-                    <td>{{ stock["stock_value"] | usd }}</td>
-                </tr>
+                    <tr class="table-light">
+                        <td>{{ stock["name"] }}</td>
+                        <td>{{ stock["symbol"] }}</td>
+                        <td>{{ stock["shares"] }}</td>
+                        <td>{{ stock["paid_price"] | usd }}</td>
+                        <td>{{ stock["current_price"] | usd }}</td>
+                        <td>{{ stock["stock_value"] | usd }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
             <tfoot>

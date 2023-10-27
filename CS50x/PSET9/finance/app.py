@@ -242,15 +242,15 @@ def register():
 
         # Check for empty fields
         if any(not field for field in [username, password, confirmation]):
-            return apology("Fields cannot be empty!")
+            return apology("Fields cannot be empty!", 403)
 
         # Ensure username is at least 4 characters long
         if len(username) < 4:
             return apology("Username must be at least 4 characters long!", 403)
 
         # Ensure username consists only of characters and digits
-        if not username.isalnum():
-            return apology("Username must contain only characters and digits!", 403)
+        # if not username.isalnum():
+        #     return apology("Username must contain only characters and digits!", 403)
 
         # Ensure password is stronger (has characters, digits, symbols)
         if len(password) < 8:
