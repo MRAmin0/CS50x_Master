@@ -249,8 +249,8 @@ def register():
             return apology("Username must be at least 4 characters long!", 403)
 
         # Ensure username consists only of characters and digits
-        # if not username.isalnum():
-        #     return apology("Username must contain only characters and digits!", 403)
+        if not username.isalnum():
+             return apology("Username must contain only characters and digits!", 400)
 
         # Ensure password is stronger (has characters, digits, symbols)
         if len(password) < 8:
