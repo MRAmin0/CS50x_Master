@@ -23,8 +23,19 @@ SQL can create new tables in a database
 SQL can create stored procedures in a database
 SQL can create views in a database
 SQL can set permissions on tables, procedures, and views
-2-What Is ASP.Net
-    -ASP.NET is an open-source, server-side web-application framework designed for web development to produce dynamic web pages. It was developed by Microsoft to allow programmers to build dynamic web sites, applications and services. The name stands for Active Server Pages Network Enabled Technologies.
+<!-- W3SChool -->
+What is ASP.NET?
+ASP.NET is an open source web framework, created by Microsoft, for building modern web apps and services with .NET.
+ASP.NET is cross platform and runs on Windows, Linux, macOS, and Docker.
+
+The .NET platform
+.NET is a developer platform made up of tools, programming languages, and libraries for building many different types of applications.
+The base platform provides components that apply to all different types of apps. Additional frameworks, such as ASP.NET, extend .NET with components for building specific types of apps.
+Here are some things included in the .NET platform:
+The C#, F#, and Visual Basic programming languages
+Base libraries for working with strings, dates, files/IO, and more
+Editors and tools for Windows, Linux, macOS, and Docker
+<!-- Micorosft -->
 3-What Is Visal Stuio ?
 
 It uses .Net 6 With sql server for database
