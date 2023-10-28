@@ -4,6 +4,9 @@
 Hello I'm Amin From CS50
 Im College Student
 This project is a library website with ASP.NET and SQL
+maybe u ask what is sql
+i can say
+sql
 It uses .Net 6 With sql server for database
 It has A login form that check username and password with database
 I used visual studio to make this project
