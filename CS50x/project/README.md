@@ -10,5 +10,8 @@ I used visual studio to make this project
 It was made 4 months ago and it takes me about a week
 it was my first university project
 so sorry for any bug/problem
-what I know is that I hate SQl And Also SQL Server Managmnet Becuase of the difiiculties that they have
+what I know is that I hate SQL And Also SQL Server Managament Becuase of the difiiculties that they have!
+But I have to work with them
+I Hope That I can FInally Find What I Truly love and make my everythin project within it
+
 Have Fun !
