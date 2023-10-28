@@ -4,9 +4,11 @@
 Hello I'm Amin From CS50
 Im College Student
 This project is a library website with ASP.NET and SQL
-maybe u ask what is sql
-i can say
-sql
+    maybe u ask what is sql?
+    -Structured Query Language is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.
+    and also what is ASP.net ?
+    -ASP.NET is an open-source, server-side web-application framework designed for web development to produce dynamic web pages. It was developed by Microsoft to allow programmers to build dynamic web sites, applications and services. The name stands for Active Server Pages Network Enabled Technologies.
+
 It uses .Net 6 With sql server for database
 It has A login form that check username and password with database
 I used visual studio to make this project
