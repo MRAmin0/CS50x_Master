@@ -4,7 +4,7 @@
 Hello I'm Amin From CS50
 Im College Student
 This project is a library website with ASP.NET and SQL
-<!--------- Requirements ----------->
+<!------------------------------------------ Requirements ------------------------------------------------------------------->
 
 SQL is a standard language for accessing and manipulating databases.
 
@@ -23,21 +23,22 @@ SQL can create new tables in a database
 SQL can create stored procedures in a database
 SQL can create views in a database
 SQL can set permissions on tables, procedures, and views
-<!-- W3SChool -->
+<!---------------------------------------------------- W3SChool ------------------------------------------------------------------->
 What is ASP.NET?
 ASP.NET is an open source web framework, created by Microsoft, for building modern web apps and services with .NET.
 ASP.NET is cross platform and runs on Windows, Linux, macOS, and Docker.
 
 The .NET platform
 .NET is a developer platform made up of tools, programming languages, and libraries for building many different types of applications.
-The base platform provides components that apply to all different types of apps. Additional frameworks, such as ASP.NET, extend .NET with components for building specific types of apps.
+The base platform provides components that apply to all different types of apps. Additional frameworks, such as ASP.NET, extend .NET with components for building specific types of apps.-
 Here are some things included in the .NET platform:
 The C#, F#, and Visual Basic programming languages
 Base libraries for working with strings, dates, files/IO, and more
 Editors and tools for Windows, Linux, macOS, and Docker
-<!-- Micorosft -->
+<!---------------------------------------------------------- Micorosft----------------------------------------------------------------------------- -->
 3-What Is Visal Stuio ?
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 It uses .Net 6 With sql server for database
 It has A login form that check username and password with database
 I used visual studio to make this project
