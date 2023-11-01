@@ -16,7 +16,9 @@ def main():
 def convert(time):
     c = 0.0
     if time rfind(" a.m.") != -1:
-        time = time
+        time = time.reaplace(" a.m." ,"")
+    elif time rfind(" p.m.") != -1:
+        time = time.reaplace(" a.m." ,"")
 
 
 
