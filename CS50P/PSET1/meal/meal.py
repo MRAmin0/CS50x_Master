@@ -8,10 +8,13 @@ def main():
     time = input("what time is it? ")
     time = float(convert(time))
     for d in sch
-        if time >= float(d["start hour"]) and time <= float(d["end hour"])
+        if time >= float(d["start hour"]) and time <= float(d["end hour"]):
+            print(d["meal"])
+        else
+            continue
 
 def convert(time):
-    ...
+    h, m = time.strip().split(":")
 
 
 if __name__ == "__main__":
