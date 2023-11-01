@@ -7,6 +7,8 @@ def main():
     ]
     time = input("what time is it? ")
     time = float(convert(time))
+    for d in sch
+        if time >= float(d["start hour"]) and time <= float(d["end hour"])
 
 def convert(time):
     ...
