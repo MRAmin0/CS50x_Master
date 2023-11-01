@@ -18,5 +18,5 @@ if a.rfind(".") != -1:
     if b in l:
 
         print(l[b])
-    else:
+    elif b =="" or b not in l:
         print("application/octet-stream")
