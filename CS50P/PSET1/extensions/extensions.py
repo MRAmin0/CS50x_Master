@@ -7,3 +7,10 @@ l = {
     "txt": "text/plain",
     "zip": "application/zip",
 }
+
+a = input("File name: ").strip().lower()
+
+if a.rfind(".") != -1:
+    index = int(a.rindex(".")) + 1
+    b = a[index:]
+    print(b)
