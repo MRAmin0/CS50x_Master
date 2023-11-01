@@ -16,9 +16,9 @@ def main():
 def convert(time):
     c = 0.0
     if time.rfind(" a.m.") != -1:
-        time = time.reaplace(" a.m.", "")
+        time = time.replace(" a.m.", "")
     elif time.rfind(" p.m.") != -1:
-        time = time.reaplace(" p.m.", "")
+        time = time.replace(" p.m.", "")
         c = 12.0
 
     h, m = time.strip().split(":")
