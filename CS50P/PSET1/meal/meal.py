@@ -4,7 +4,7 @@ def main():
         {"meal": "lunch time", "start hour": 12, "end hour": 13},
         {"meal": "dinner time", "start hour": 18, "end hour": 19},
     ]
-    time = input("what time is it? ")
+    time = input("What time is it? ")
     time = float(convert(time))
     for d in sch:
         if time >= float(d["start hour"]) and time <= float(d["end hour"]):
