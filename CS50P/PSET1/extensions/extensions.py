@@ -1,6 +1,6 @@
 l = {
     "gif": "image/gif",
-    "jpg": "image/jpg",
+    "jpg": "image/jpeg",
     "jpeg": "image/jpeg",
     "png": "image/png",
     "pdf": "application/pdf",
