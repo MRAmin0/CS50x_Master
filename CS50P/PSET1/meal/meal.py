@@ -16,6 +16,10 @@ def main():
 def convert(time):
     c = 0.0
     if time rfind(" a.m.") != -1:
+        time = time
+
+
+
     h, m = time.strip().split(":")
     t = float(h) + (float(m) / 60)
 
