@@ -14,6 +14,8 @@ a = input("File name: ").strip().lower()
 if a.rfind(".") != -1:
     index = int(a.rindex(".")) + 1
     b = a[index:]
-   # print(b)
+# print(b)
 if b not in l:
-    print("application/octe")
+    print("application/octet-stream")
+else:
+    print(f"{b}")
