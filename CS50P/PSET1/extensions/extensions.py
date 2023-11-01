@@ -10,6 +10,7 @@ l = {
 
 a = input("File name: ").strip().lower()
 
+# rfind() method finds the last occurrence of the specified value
 if a.rfind(".") != -1:
     index = int(a.rindex(".")) + 1
     b = a[index:]
