@@ -1,9 +1,9 @@
 l = {
-     "gif" : "image/gif"
-     "jpg"
-     "jpeg"
-     "png"
-     "pdf"
-     "txt"
-     "zip"
+    "gif": "image/gif",
+    "jpg": "image/jpg",
+    "jpeg": "image/jpeg",
+    "png": "image/png",
+    "pdf": "application/pdf",
+    "txt": "text/plain",
+    "zip": "application/zip",
 }
