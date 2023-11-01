@@ -1,1 +1,2 @@
-a = imput("Enter an exoression : ")
+a = imput("Enter an exoression : ").strip().split(" ")
+print
