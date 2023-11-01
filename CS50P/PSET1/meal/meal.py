@@ -1,7 +1,7 @@
 def main():
     sch =
     [
-        {}
+         {"meal" : "breakfast time" , "start hour" : }
     ]
 
 
