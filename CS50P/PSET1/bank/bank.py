@@ -1,7 +1,7 @@
 i = input("Greeting: ").strip().lower()
-if i.startwith("hello"):
+if i.startswith("hello"):
     a = 0
-elif i.startwith("h"):
+elif i.startswith("h"):
     a = 20
 else:
     a = 100
