@@ -20,3 +20,9 @@ fruits = [
     {"friut": "tangerine", "calories": "50"},
     {"friut": "watermelon", "calories": "80"},
 ]
+a = input("Input: ").strip().lower()
+for in in fruits:
+    if a in i["fruit"]:
+        if a == i["fruit"]:
+            print
+
