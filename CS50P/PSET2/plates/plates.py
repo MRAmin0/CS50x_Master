@@ -22,6 +22,9 @@ def is_valid(s):
                         validated += ch
                     elif ch.isalpha() and numcheck == 0 :
                         validated += ch
-    if vaildated
+    if validated == s:
+        return True
+    else:
+        return False
 
 main()
