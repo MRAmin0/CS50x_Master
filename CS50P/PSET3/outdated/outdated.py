@@ -32,11 +32,23 @@ While True:
                     # print them "2 raghami"
                     print(f"{year}-{month:02}-{day:02}")
                     break
-    # if the input had no space
+        # if the input had no space
+        else:
+            month , day ,year = a.split("/")
+            if month <= 12 and day <= 31:
+               print(f"{int(year)}-{int(month):02}-{int(day):02}")
+               break
+    # any kind of input errorr is handled
+    except ValueError:
+        continue
+    # if CTRL + D --> End The Program
+    except (EOFError , KeyboardInterrupt):
+        print("", end ="\n")
+        quit()
+    # repeat the loop if no CTRL + D
     else:
-    month , day ,year = a.split("/")
-       if month <= 12 and day <= 31:
-         print(f"{int(year)}-{int(month):02}-{int(day):02}")
-         break
+        continue
+
+
 
 
