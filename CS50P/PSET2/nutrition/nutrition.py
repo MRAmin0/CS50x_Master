@@ -21,7 +21,7 @@ fruits = [
     {"friut": "watermelon", "calories": "80"},
 ]
 a = input("Input: ").strip().lower()
-for in in fruits:
+for i in fruits:
     if a in i["fruit"]:
         if a == i["fruit"]:
             print(f"Calories: {i['calories']}")
