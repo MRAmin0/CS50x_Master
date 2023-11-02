@@ -4,6 +4,7 @@ while True:
     # getting inputs
     try:
         a = input().strip().lower()
+        list.append(a)
     # if CTRL + D --> End The Program
     except (EOFError , KeyError):
         b = sorted(set(list))
