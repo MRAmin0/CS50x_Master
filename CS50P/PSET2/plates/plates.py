@@ -14,15 +14,14 @@ def is_valid(s):
         if s[0].isalpha() and s[1].isalpha():
             for ch in s:
                 if ch not in symbols :
-                    if ch.isnumeric() and numcheck == 0 and ch != 0:
+                    if ch.isnumeric() and numcheck == 0 and ch != "0":
                         numcheck += 1
                         validated += ch
-                    elif ch.isnumeric() and numcheck == 0 and ch != 0:
+                    elif ch.isnumeric() and numcheck > 0 :
                         numcheck += 1
                         validated += ch
-                    elif ch.
-
-
-
+                    elif ch.isalpha() and numcheck == 0 :
+                        validated += ch
+    if vaildated
 
 main()
