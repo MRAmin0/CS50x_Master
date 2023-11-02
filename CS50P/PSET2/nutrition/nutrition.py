@@ -24,5 +24,5 @@ a = input("Input: ").strip().lower()
 for in in fruits:
     if a in i["fruit"]:
         if a == i["fruit"]:
-            print
+            print(f"Calories: {i['calories']}")
 
