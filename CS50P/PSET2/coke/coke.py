@@ -1,10 +1,10 @@
-cost = 50
-gain = 0
-while gain < cost:
-    print(f"Amount Due: {cost-gain}")
-    a = int(input("Input coin: ").strip())
-    if a == 25 or a == 10 or a == 5:
-        gain = +a
-    else:
-        continue
+amount_due = 50
+
+while amount_due > 0:
+    print(f"Amount Due: {amount_due}")
+    coin = int(input("Input Coin: "))
+    if coin in [25,10,5]:
+        amount_due -= coin
+
+change_owed = abs(amount_due)
 print(f"Change Owed: {gain-cost}")
