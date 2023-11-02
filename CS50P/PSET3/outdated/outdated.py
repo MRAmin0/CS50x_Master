@@ -1,4 +1,3 @@
-
 months = [
     "January",
     "February",
@@ -11,7 +10,7 @@ months = [
     "September",
     "October",
     "November",
-    "December"
+    "December",
 ]
 while True:
     try:
@@ -21,7 +20,7 @@ while True:
         # if the input contains spaces
         if " " in a:
             if "," in a:
-                month , day ,year = a.split(" ")
+                month, day, year = a.split(" ")
                 # find the month title in list
                 if month.title() in months:
                     # delete the ',' after day number
@@ -30,25 +29,21 @@ while True:
                     month = int(months.index(month)) + 1
                     if month <= 12 and day <= 31:
                         # print them "2 raghami"
-                    print(f"{year}-{month:02}-{day:02}")
-                    break
+                        print(f"{year}-{month:02}-{day:02}")
+                        break
         # if the input had no space
         else:
-            month , day ,year = a.split("/")
+            month, day, year = a.split("/")
             if month <= 12 and day <= 31:
-               print(f"{int(year)}-{int(month):02}-{int(day):02}")
-               break
+                print(f"{int(year)}-{int(month):02}-{int(day):02}")
+                break
     # any kind of input errorr is handled
     except ValueError:
         continue
     # if CTRL + D --> End The Program
-    except (EOFError , KeyboardInterrupt):
-        print("", end ="\n")
+    except (EOFError, KeyboardInterrupt):
+        print("", end="\n")
         quit()
     # repeat the loop if no CTRL + D
     else:
         continue
-
-
-
-
