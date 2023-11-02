@@ -20,6 +20,9 @@ fruits = [
     {"fruit": "tangerine", "calories": "50"},
     {"fruit": "watermelon", "calories": "80"},
     {"fruit": "Sweet Cherries", "calories": "100"},
+    {"fruit": "SweetCherries", "calories": "100"},
+    {"fruit": "sweetcherries", "calories": "100"},
+    {"fruit": "sweet cherries", "calories": "100"},
 ]
 a = input("Input: ").strip().lower()
 for i in fruits:
