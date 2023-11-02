@@ -3,7 +3,7 @@ snake = ""
 for letter in a:
     if letter.isupper():
         snake += "_"
-        snake += letter.lower
+        snake += letter.lower()
     else:
         snake += letter
 
