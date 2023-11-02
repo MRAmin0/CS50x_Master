@@ -34,7 +34,7 @@ while True:
         # if the input had no space
         else:
             month, day, year = a.split("/")
-            if month <= 12 and day <= 31:
+            if int(month) <= 12 and int(day) <= 31:
                 print(f"{int(year)}-{int(month):02}-{int(day):02}")
                 break
     # any kind of input errorr is handled
