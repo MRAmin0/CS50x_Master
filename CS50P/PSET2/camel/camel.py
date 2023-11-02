@@ -7,4 +7,4 @@ for letter in a:
     else:
         snake += letter
 
-print(f"snake_case {snake}")
+print(f"snake_case: {snake}")
