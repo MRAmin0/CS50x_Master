@@ -7,4 +7,4 @@ while amount_due > 0:
         amount_due -= coin
 
 change_owed = abs(amount_due)
-print(f"Change Owed: {gain-cost}")
+print(f"Change Owed: {change_owed}")
