@@ -1,37 +1,6 @@
-fruits = [{
-Fruits
-Serving
-Size
-(gram
-weight/
-ounce
-weight)	Calories	Calories
-from
-Fat	Total Fat
-(g)	Total Fat (%DV)	Sodium
-(mg)	Sodium
-(%DV)	Potassium
-(mg)	Potassium
-(%DV)	Total
-Carb.
-(g)	Total
-Carb.
-(%DV)	Dietary
-Fiber
-(g)	Dietary
-Fiber
-(%DV)	Sugars
-(g)	Protein
-(g)	Vitamin
-A
-(%DV)	Vitamin
-C
-(%DV)	Calcium
-(%DV)	Iron
-(%DV)
-Apple
+fruits = [{Apple
 1 large
-(242 g/
+(242 g/`
 8 oz)	130	0	0	0	0	0	260	7	34	11	5	20	25	1	2	8	2	2
 Avocado
 California,
@@ -115,5 +84,5 @@ Watermelon
 1/18 medium melon;
 2 cups diced pieces
 (280 g/
-10.0 oz)	80	0	0	0	0	0	270	8	21	7	1	4	20	1	30	25	2	4
+10.0 oz)	80
 },{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},]
