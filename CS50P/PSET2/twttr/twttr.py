@@ -1,7 +1,7 @@
 vowel = ["a", "o", "u", "i", "e"]
 input = input("Input : ").strip()
-outout = ""
+output = ""
 for letter in input:
     if letter.lower() not in vowel:
-        output = +letter
+        output = +letter.lower()
 print(f"Output: {output}")
