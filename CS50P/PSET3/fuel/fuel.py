@@ -3,10 +3,10 @@ while True:
     # using try except to stop errors in devide
     try:
         # spiliting the input
-        u,d = tank.split("/", 1)
+        u, d = tank.split("/", 1)
         # cheking if both are numbers
         if u.isdigit() and d.isdigit():
-            if int(u) < = ind(d) and int(d) != 0:
+            if int(u) <= int(d) and int(d) != 0:
                 fuel = (int(u) / int(d)) * 100
                 if fuel >= 99:
                     print("F")
@@ -17,7 +17,7 @@ while True:
                 else:
                     print("E")
                     break
-    except (ValueError , ZeroDivisionError):
+    except (ValueError, ZeroDivisionError):
         pass
     else:
         pass
