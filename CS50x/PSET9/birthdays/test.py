@@ -29,8 +29,8 @@ def index():
         # TODO: Add the user's entry into the database
         message = ""
         inputname = request.form.get("name")
-        inputmonth = request.form.get("monat")
-        inputday = request.form.get("tag")
+        inputmonth = request.form.get("month")
+        inputday = request.form.get("day")
         if not inputname:
             message = "you didn't enter any name !"
         elif not inputday:
