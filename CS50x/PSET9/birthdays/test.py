@@ -39,7 +39,7 @@ def index():
             message = "you didn't enter birth month"
         else:
             db.execute(
-                "INSERT INTO birthdays (name, monat, tag) VALUES(?, ?, ?)",
+                "INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)",
                 inputname,
                 inputmonth,
                 inputday,
