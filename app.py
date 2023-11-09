@@ -9,7 +9,6 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
@@ -27,29 +26,26 @@ def after_request(response):
 def index():
     if request.method == "POST":
         # TODO: Add the user's entry into the database
-        message = ""
+        mesaage = ""
         inputname = request.form.get("name")
-        inputmonth = request.form.get("monat")
-        inputday = request.form.get("tag")
+        inputmonth = request.form.get("month")
+        inputday = request.form.get("day")
         if not inputname:
-            message = "you didn't enter any name !"
+            message = "Please Enter A Name ! "
         elif not inputday:
-            message = "Birthday is missing from your input"
+            message = "Please Enter A Day ! "
         elif not inputmonth:
-            message = "you didn't enter birth month"
+            message = "Please Enter Month ! "
         else:
             db.execute(
-                "INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)",
+                "INSERT INTO birthdays(name,month,day) VALUES(?,?,?)",
                 inputname,
                 inputmonth,
                 inputday,
             )
-        birthdays = db.execute("SELECT * FROM birthdays")
-        return render_template("index.html", message=message, birthdays=birthdays)
-
+            birthdays = db.execute("SELECT * FROM birthdays")
+            return render_template("index.html", birthdays=birthdays)
     else:
         # TODO: Display the entries in the database on index.html
-        # kheili sakht
-
         birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", birthdays=birthdays)
