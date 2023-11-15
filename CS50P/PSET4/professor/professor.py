@@ -45,7 +45,7 @@ def get_level():
     # get level from user
     while True:
         try:
-            level = int(input("Level: "))
+            level = int(input())
             # if it was less than 1 or more than 3 ask again
             if level <= 3 and level > 0:
                 return level
