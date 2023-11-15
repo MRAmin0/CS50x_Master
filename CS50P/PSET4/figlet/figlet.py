@@ -15,6 +15,7 @@ elif len(sys.argv) == 3:
         a = input("Input: ").strip()
         figlet.setFont(font=str(sys.argv[2]))
         print(figlet.renderText(a))
+        
     else:
         # happens when font is not found
         sys.exit("Invalid usage")
