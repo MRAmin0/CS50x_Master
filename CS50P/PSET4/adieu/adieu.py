@@ -10,5 +10,5 @@ while True:
         names.append(a)
         # wait for CTRL D to stop the code
     except (EOFError, KeyError):
-        print(f"Adieu, adieu, to{p.join(names)}", end="\n")
+        print(f"Adieu, adieu, to {p.join(names)}", end="\n")
         quit()
