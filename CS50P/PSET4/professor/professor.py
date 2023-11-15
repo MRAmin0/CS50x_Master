@@ -11,20 +11,37 @@ def main():
 done = 0
 
 #ask user the random generated question
-for qusestion in pset:
+for question in pset:
     # fail counter
     life = 0
 
     while True:
         try:
-            level = int(input("Level: "))
-            # if it was less than 1 or more than 3 ask again
-            if level <= 3 and level > 0:
-                return level
-        #wrong input? ask again
-        except ValueError:
-            continue
+            ans = int(input(f"{question}= "))
+            a, b = question.strip(" ").split("+")
 
+            # if it was less than 1 or more than 3 ask again
+        #     if level <= 3 and level > 0:
+        #         return level
+
+        # input vs true ans
+            if life ==2:
+                print("EEE")
+                print(f"{question} = {(int(a) + int(b))}")
+                break
+            elif ans != (int(a) + int(b)):
+                life += 1
+                print("EEE")
+            else:
+                done += 1
+                life = 0
+                break
+        #wrong input type
+        except ValueError:
+            print("EEE")
+            life += 1
+            continue
+        print(f"")
 def generate_integer(level):
     # 10 random psets
     pset = []
@@ -36,6 +53,7 @@ def generate_integer(level):
     #build problem sets according to user input
     for _ in range(0,10):
         pset.append(f"{randint(lower,higher)} + {randint(lower,higher)}")
+
     return pset
 
 
