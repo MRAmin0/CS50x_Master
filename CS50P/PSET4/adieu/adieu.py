@@ -6,7 +6,7 @@ names = []
 while True:
     # getting user input
     try:
-        a = str(input("Name :").strip())
+        a = str(input().strip())
         names.append(a)
         # wait for CTRL D to stop the code
     except (EOFError, KeyError):
