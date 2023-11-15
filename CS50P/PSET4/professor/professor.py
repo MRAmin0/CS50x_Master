@@ -8,39 +8,37 @@ def main():
     slevel = get_level()
     pset = generate_integer(slevel)
 
+    # success counter
+    done = 0
 
-# success counter
-done = 0
+    # ask user the random generated question
+    for question in pset:
+        # fail counter
+        life = 0
+        while True:
+            try:
+                ans = int(input(f"{question}= "))
+                a, b = question.strip(" ").split("+")
 
-# ask user the random generated question
-for question in pset:
-    # fail counter
-    life = 0
-
-    while True:
-        try:
-            ans = int(input(f"{question}= "))
-            a, b = question.strip(" ").split("+")
-
-            # input vs true ans
-            if life == 2:
+                # input vs true ans
+                if life == 2:
+                    print("EEE")
+                    print(f"{question} = {(int(a) + int(b))}")
+                    break
+                elif ans != (int(a) + int(b)):
+                    life += 1
+                    print("EEE")
+                else:
+                    done += 1
+                    life = 0
+                    break
+            # wrong input type
+            except ValueError:
                 print("EEE")
-                print(f"{question} = {(int(a) + int(b))}")
-                break
-            elif ans != (int(a) + int(b)):
                 life += 1
-                print("EEE")
-            else:
-                done += 1
-                life = 0
-                break
-        # wrong input type
-        except ValueError:
-            print("EEE")
-            life += 1
-            continue
+                continue
 
-print(f"Score: {done}")
+    print(f"Score: {done}")
 
 
 def get_level():
