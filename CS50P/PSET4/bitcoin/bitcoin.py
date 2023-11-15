@@ -1,5 +1,5 @@
 import sys
-import request
+import requests
 
 apilink = "https://api.coindesk.com/v1/bpi/currentprice.json"
 
@@ -41,6 +41,6 @@ def coindesk(uinput):
         sys.exit()
     return c
 
-if name = "__name__":
-    main()
 
+if __name__ == "__main__":
+    main()
