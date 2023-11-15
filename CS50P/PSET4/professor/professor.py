@@ -21,8 +21,22 @@ for qusestion in pset:
             # if it was less than 1 or more than 3 ask again
             if level <= 3 and level > 0:
                 return level
-        #wrong input? ask again?
+        #wrong input? ask again
+        except ValueError:
+            continue
 
+def generate_integer(level):
+    # 10 random psets
+    pset = []
+
+    # set difficulty
+    lower = levellist[level - 1][level][0]
+    higher = levellist[level - 1][level][1]
+
+    #build problem sets according to user input
+    for _ in range(0,10):
+        pset.append(f"{randint(lower,higher)} + {randint(lower,higher)}")
+    return pset
 
 
 
