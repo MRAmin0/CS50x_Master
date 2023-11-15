@@ -11,6 +11,8 @@ def main():
 done = 0
 
 #ask user the random generated question
+for qusestion in pset:
+    
 
 def get_level():
 
