@@ -20,9 +20,7 @@ for question in pset:
             ans = int(input(f"{question}= "))
             a, b = question.strip(" ").split("+")
 
-            # if it was less than 1 or more than 3 ask again
-        #     if level <= 3 and level > 0:
-        #         return level
+
 
         # input vs true ans
             if life ==2:
@@ -41,7 +39,7 @@ for question in pset:
             print("EEE")
             life += 1
             continue
-        print(f"")
+        print(f"Score: {done}")
 def generate_integer(level):
     # 10 random psets
     pset = []
@@ -59,8 +57,16 @@ def generate_integer(level):
 
 
 def get_level():
-
-
+    # get level from user
+    while True:
+        try:
+            level = int(input("Level: "))
+            # if it was less than 1 or more than 3 ask again
+            if level <= 3 and level > 0:
+                return level
+        #wrong input? ask again
+        except ValueError:
+            continue
 
 def generate_integer(level):
 
