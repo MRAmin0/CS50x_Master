@@ -12,7 +12,13 @@ done = 0
 
 #ask user the random generated question
 for qusestion in pset:
-    
+    # fail counter
+    life = 0
+
+    while True:
+        try:
+            
+
 
 def get_level():
 
