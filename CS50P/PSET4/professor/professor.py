@@ -17,7 +17,7 @@ def main():
         life = 0
         while True:
             try:
-                ans = int(input(f"{question}= "))
+                ans = int(input(f"{question} = "))
                 a, b = question.strip(" ").split("+")
 
                 # input vs true ans
