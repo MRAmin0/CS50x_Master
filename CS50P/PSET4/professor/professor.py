@@ -1,4 +1,4 @@
-form random import randint
+from random import randint
 
 # meaning of each level using 3 dicts in a list
 levellist = [{1:[0,9]}, {2:[10,99]}, {3:[100,999]}]
@@ -40,20 +40,6 @@ for question in pset:
             life += 1
             continue
         print(f"Score: {done}")
-def generate_integer(level):
-    # 10 random psets
-    pset = []
-
-    # set difficulty
-    lower = levellist[level - 1][level][0]
-    higher = levellist[level - 1][level][1]
-
-    #build problem sets according to user input
-    for _ in range(0,10):
-        pset.append(f"{randint(lower,higher)} + {randint(lower,higher)}")
-
-    return pset
-
 
 
 def get_level():
@@ -68,7 +54,20 @@ def get_level():
         except ValueError:
             continue
 
+
 def generate_integer(level):
+    # 10 random psets
+    pset = []
+
+    # set difficulty
+    lower = levellist[level - 1][level][0]
+    higher = levellist[level - 1][level][1]
+
+    #build problem sets according to user input
+    for _ in range(0,10):
+        pset.append(f"{randint(lower,higher)} + {randint(lower,higher)}")
+
+    return pset
 
 
 
