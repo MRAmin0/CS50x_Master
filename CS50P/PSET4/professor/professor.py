@@ -39,7 +39,8 @@ for question in pset:
             print("EEE")
             life += 1
             continue
-    print(f"Score: {done}")
+
+print(f"Score: {done}")
 
 
 def get_level():
