@@ -19,10 +19,11 @@ while True:
                     else:
                         print("Just right!")
                         break
-                    # ask again for an input (guess) if it wasn't valid
+                # ask again for an input (guess) if it wasn't valid
                 except (TypeError, ValueError):
                     continue
-           break
+            break
+
     # ask again for an input (level) if it wasn't valid
     except (TypeError, ValueError):
         continue
