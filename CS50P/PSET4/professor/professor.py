@@ -17,7 +17,13 @@ for qusestion in pset:
 
     while True:
         try:
-            
+            level = int(input("Level: "))
+            # if it was less than 1 or more than 3 ask again
+            if level <= 3 and level > 0:
+                return level
+        #wrong input? ask again?
+
+
 
 
 def get_level():
