@@ -5,7 +5,7 @@ while True:
     try:
         level = int(input("Level: ").strip())
         # checck if user input is a positive int
-        if level <= 1:
+        if level >= 1:
             random = randint(1, level)
             # ask user to make a guess
             while True:
@@ -22,7 +22,7 @@ while True:
                     # ask again for an input (guess) if it wasn't valid
                 except (TypeError, ValueError):
                     continue
-            break
+             break
     # ask again for an input (level) if it wasn't valid
     except (TypeError, ValueError):
         continue
