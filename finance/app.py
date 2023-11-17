@@ -1,12 +1,12 @@
-import os
 import re
+import os
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
+from werkzeug.security import generate_password_hash, check_password_hash
+from helpers import apology, login_required, lookup, usd, get_time, check_password
 from flask_session import Session
 
-from werkzeug.security import check_password_hash, generate_password_hash
-from helpers import apology, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
@@ -19,23 +19,31 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
+
+# Make sure API key is set
+if not os.environ.get("API_KEY"):
+    raise RuntimeError("API_KEY not set")
 
 
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
+
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
+
     return response
 
 
 @app.route("/")
 @login_required
-def index(): # Todo
-    """Show portfolio of stocks"""
+def index():
+    """Show portfolio of stocks."""
+
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
     cash_left = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
@@ -70,12 +78,12 @@ def index(): # Todo
     )
 
 
-
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
-def buy(): # Todo
-    """Buy shares of stock"""
-   # User reached route via POST (as by submitting a form via POST)
+def buy():
+    """Buy shares of stock."""
+
+    # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
         user_id = session["user_id"]
 
@@ -140,39 +148,42 @@ def buy(): # Todo
 
 @app.route("/history")
 @login_required
-def history(): # Todo
-    """Show history of transactions"""
+def history():
+    """Show history of transactions."""
+
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM history WHERE user_id = ?", user_id)
 
     return render_template("history.html", portfolio=portfolio)
 
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Log user in"""
+    """Log user in."""
 
     # Forget any user_id
     session.clear()
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("Must provide username!", 400)
 
         # Ensure password was submitted
-        elif not request.form.get("password"):
-            return apology("must provide password", 403)
+        if not request.form.get("password"):
+            return apology("Must provide password!", 400)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
+            return apology("invalid username or password", 400)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -187,7 +198,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    """Log user out"""
+    """Log user out."""
 
     # Forget any user_id
     session.clear()
@@ -198,8 +209,9 @@ def logout():
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
-def quote(): # Todo
+def quote():
     """Get stock quote."""
+
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
         # Search details about the stock
@@ -219,65 +231,68 @@ def quote(): # Todo
 
 
 @app.route("/register", methods=["GET", "POST"])
-def register(): # Todo
-    """Register user"""
-    if (request.method == "POST"):
-        username = request.form.get('username')
-        password = request.form.get('password')
-        confirmation = request.form.get('confirmation')
+def register():
+    """Register user."""
 
-        if not username:
-            return apology('Username can not be empty!')
-        elif not password:
-            return apology('Password can not be empty!')
-        elif not confirmation:
-            return apology('You must confirm your password!')
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
 
-        if password != confirmation:
-            return apology('Incorrect!')
-        # Make sure the name isn't registered already or the field is empty
-        if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
-            return apology("Username already taken!")
+        # Check for empty fields
+        if any(not field for field in [username, password, confirmation]):
+            return apology("Fields cannot be empty!", 400)
 
         # Ensure username is at least 4 characters long
         if len(username) < 4:
-            return apology("Username must be at least 4 characters long!")
+            return apology("Username must be at least 4 characters long!", 403)
 
         # Ensure username consists only of characters and digits
         # if not username.isalnum():
-           # return apology("Username must contain only characters and digits!", 200)
+        #     return apology("Username must contain only characters and digits!", 403)
 
         # Ensure password is stronger (has characters, digits, symbols)
         if len(password) < 8:
-            return apology("Password must be at least 8 characters long!")
+            return apology("Password must be at least 8 characters long!", 400)
         if (
             not re.search("[a-zA-Z]", password)
             or not re.search("[0-9]", password)
             or not re.search("[!@#$%^&*()]", password)
         ):
-            return apology("Password must contain characters, digits and symbols!")
+            return apology("Password must contain characters, digits and symbols!", 400)
+
+        # Check for password to be the same
+        if password != confirmation:
+            return apology("Passwords do not match!", 400)
+
+        # Make sure the name isn't registered already or the field is empty
+        if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
+            return apology("Username already taken!", 400)
 
         # Hash password
-        hash = generate_password_hash(password)
-
-
+        hashed_password = generate_password_hash(password)
         # Add username & hashed password in the database
-        try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-            return redirect('/')
-        except:
-            return apology('It is used before!')
+        db.execute(
+            "INSERT INTO users (username, hash) VALUES (?, ?)",
+            username,
+            hashed_password,
+        )
 
-    else:
-        # User reached route via GET (as by clicking a link or via redirect)
-        return render_template("register.html")
+        # Remember which user has logged in
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        session["user_id"] = rows[0]["id"]
 
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
-def sell(): # Todo
-    """Sell shares of stock"""
+def sell():
+    """Sell shares of stock."""
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
 
@@ -351,3 +366,58 @@ def sell(): # Todo
     # User reached route via GET (as by clicking a link or via redirect)
     return render_template("sell.html", portfolio=portfolio)
 
+
+@app.route("/deposit", methods=["GET", "POST"])
+@login_required
+def deposit():
+    """Deposit funds to account."""
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        user_id = session["user_id"]
+
+        amount = int(request.form.get("sum"))
+        account = db.execute("SELECT * FROM users WHERE id = ?", user_id)
+
+        # Ensure password is correct
+        check_password(account[0]["hash"], request.form.get("password"))
+
+        # Add funds to account
+        cash = account[0]["cash"] + amount
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
+
+        flash(f"Successfully added ${amount} to your balance!")
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("deposit.html")
+
+
+@app.route("/withdraw", methods=["GET", "POST"])
+@login_required
+def withdraw():
+    """Withdraw funds from account."""
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        user_id = session["user_id"]
+
+        amount = int(request.form.get("sum"))
+        account = db.execute("SELECT * FROM users WHERE id = ?", user_id)
+
+        # Ensure password is correct
+        check_password(account[0]["hash"], request.form.get("password"))
+
+        # Ensure user cannot withdraw more than left cash
+        if amount > account[0]["cash"]:
+            return apology("Cannot withdraw more than cash left!")
+
+        # Withdraw funds from account
+        cash = account[0]["cash"] - amount
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
+
+        flash(f"Successfully withdrew ${amount} from your balance!")
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("withdraw.html")
