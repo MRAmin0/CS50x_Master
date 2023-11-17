@@ -30,7 +30,12 @@ def apology(message, code=400):
             s = s.replace(old, new)
         return s
 
-    return render_template("apology.html", top=code, bottom=escape(message)), code
+    if isinstance(message, str):
+        message = escape(message)
+    else:
+        message = "Error occured!"
+
+    return render_template("apology.html", top=code, bottom=message), code
 
 
 def login_required(f):
@@ -44,6 +49,7 @@ def login_required(f):
     def decorated_function(*args, **kwargs):
         if session.get("user_id") is None:
             return redirect("/login")
+        
         return f(*args, **kwargs)
 
     return decorated_function
