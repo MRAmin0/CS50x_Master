@@ -12,9 +12,7 @@ def main():
 
 def is_valid(s):
     pattern = r"^[A-Za-z]{2}[A-Za-z1-9]{0,1}[A-Za-z0-9]{0,1}$"
-    pattern_2 = (
-        r"^[A-Za-z]{2}[A-Za-z]{0,1}[A-Za-z]{0,1}[A-Za-z1-9]{0,1}[A-Za-z1-9]{0,1}$"
-    )
+    pattern_2 = r"^[A-Za-z]{2}[A-Za-z1-9]{0,1}[A-Za-z1-9]{0,1}$"
 
     if re.match(pattern, s) or re.match(pattern_2, s):
         return True
@@ -23,6 +21,9 @@ def is_valid(s):
         if char in s:
             return False
 
+    return False  # If none of the conditions above are met, return False
+
 
 if __name__ == "__main__":
     main()
+    
