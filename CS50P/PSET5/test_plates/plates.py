@@ -17,7 +17,7 @@ def is_valid(s):
     )
 
     if re.match(pattern, s) or re.match(pattern_2, s):
-        return bool
+        return True
 
     for char in string.punctuation:
         if char in s:
