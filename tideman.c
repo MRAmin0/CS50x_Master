@@ -5,28 +5,6 @@
 // Max number of candidates
 #define MAX 9
 
-// ... (rest of your code)
-
-// Function prototypes
-bool vote(int rank, string name, int ranks[]);
-void record_preferences(int ranks[]);
-void add_pairs(void);
-void sort_pairs(void);
-void lock_pairs(void);
-void print_winner(void);
-bool creates_cycle(int winner, int loser);
-bool dfs_cycle_check(int current, int target, bool visited[]);
-
-// ... (rest of your code)
-
-#include <cs50.h>
-
-#include <stdio.h>
-
-#include <string.h>
- // Max number of candidates
-#define MAX 9
-
 // preferences[i][j] is number of voters who prefer i over j
 int preferences[MAX][MAX];
 
