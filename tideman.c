@@ -207,3 +207,37 @@ void print_winner(void) {
     }
 }
 
+// Check if adding this pair would create a cycle in the locked pairs
+bool creates_cycle(int winner, int loser) {
+    // Start with the assumption that there is no cycle
+    bool visited[MAX];
+    for (int i = 0; i < candidate_count; i++) {
+        visited[i] = false;
+    }
+
+    return dfs_cycle_check(loser, winner, visited);
+}
+
+// Depth-First Search to check for cycles
+bool dfs_cycle_check(int current, int target, bool visited[]) {
+    // If we have reached the target node, there is a cycle
+    if (current == target) {
+        return true;
+    }
+
+    // Mark the current node as visited
+    visited[current] = true;
+
+    // Check all neighbors
+    for (int i = 0; i < candidate_count; i++) {
+        if (locked[current][i] && !visited[i]) {
+            // Recursively check neighbors
+            if (dfs_cycle_check(i, target, visited)) {
+                return true;
+            }
+        }
+    }
+
+    // No cycle found
+    return false;
+}
