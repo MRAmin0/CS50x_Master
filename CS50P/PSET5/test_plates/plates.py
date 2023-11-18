@@ -1,4 +1,4 @@
-python import string
+import string
 import re
 
 
