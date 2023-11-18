@@ -1,13 +1,16 @@
 import string
 import re
+import sys
 
 
 def main():
     plate = input("Plate: ")
     if is_valid(plate):
         print("Valid")
+        sys.exit(0)  # Exit with code 0 for success
     else:
         print("Invalid")
+        sys.exit(2)  # Exit with code 2 for failure
 
 
 def is_valid(s):
