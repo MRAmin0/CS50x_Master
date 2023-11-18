@@ -170,4 +170,40 @@ void sort_pairs(void) {
         }
     }
 }
+// Lock pairs into the candidate graph in order, without creating cycles
+void lock_pairs(void) {
+    // TODO: Implement the logic to lock pairs
+    for (int i = 0; i < pair_count; i++) {
+        int winner = pairs[i].winner;
+        int loser = pairs[i].loser;
+
+        // Check if adding this pair would create a cycle
+        if (!creates_cycle(winner, loser)) {
+            // Lock the pair
+            locked[winner][loser] = true;
+        }
+    }
+}
+
+// Print the winner of the election
+void print_winner(void) {
+    // TODO: Implement the logic to print the winner
+    for (int i = 0; i < candidate_count; i++) {
+        bool is_winner = true;
+
+        // Check if candidate i is the winner
+        for (int j = 0; j < candidate_count; j++) {
+            if (locked[j][i]) {
+                is_winner = false;
+                break;
+            }
+        }
+
+        // If no one points to candidate i, print them as the winner
+        if (is_winner) {
+            printf("%s\n", candidates[i]);
+            return;
+        }
+    }
+}
 
