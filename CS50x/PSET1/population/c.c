@@ -12,8 +12,8 @@ int main(void)
         printf("hello  ");
         start = get_int("start size:");
     }
-    while (start < 9);
-
+    while (start < 9)
+        ;
 
     // TODO: Prompt for start size
     //هرشروعی پایانی دارد
