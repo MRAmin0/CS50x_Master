@@ -16,7 +16,7 @@ def main():
         print("File foes not exist")
         sys.exit(1)
 
-    elif not sys.argv[1].endwith(".py"):
+    elif not sys.argv[1].endswith(".py"):
         print("Not a Python file")
         sys.exit(1)
     else:
