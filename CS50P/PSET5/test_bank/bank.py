@@ -5,11 +5,10 @@ def main():
 
 
 def value(greeting):
-# check how much we owe    ...
-
-    if i.lower().startswith("hello"):
+    # check how much we owe    ...
+    if greeting.startswith("hello"):
             return 0
-    elif i.lower().startswith("h"):
+    elif greeting.startswith("h"):
             return 20
     else:
             return 100
