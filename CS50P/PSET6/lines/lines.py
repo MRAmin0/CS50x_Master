@@ -28,4 +28,9 @@ def counter(python_file):
 
     with open(python_file, "r") as lines:
 
-        # 
+        #total line counter
+        tlines = list(enumerate(lines.readlines(), start= 1))
+
+        # check if each line is code or not
+        for nline, line in tlines:
+            if 
