@@ -9,3 +9,4 @@ def test_shorten():
     #assert shorten("Iran : The permanent land!") == "rn : Th Prmnnt lnd!"
     assert shorten("1aeu2b333cii4f5ea") == "12b333c4f5"
     assert shorten("ALLOYEI") == "LLY"
+    assert shorten(".?”“‘,-–—!:;())[]…/")== ".?”“‘,-–—!:;())[]…/"
