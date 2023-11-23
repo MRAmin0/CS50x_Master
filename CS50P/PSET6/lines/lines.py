@@ -35,7 +35,7 @@ def counter(python_file):
         for nline, lines in tlines:
             if (
                 lines.strip().startswith("#")
-                or lines.srtip().startswith("\n")
+                or lines.strip().startswith("\n")
                 or lines.isspace()
             ):
                 rline += 1
