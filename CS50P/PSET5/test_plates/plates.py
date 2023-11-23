@@ -21,13 +21,16 @@ def is_valid(s):
                     elif ch.isnumeric() and numcheck > 0:
                         numcheck += 1
                         validated += ch
-                    elif ch.isalpha() and numcheck == 0:
+                    elif ch.isalpha() and numcheck < 1:
                         validated += ch
-    if validated == s:
-        return True
+
     else:
         return False
 
+    if validated ==s:
+     return True
+    else:
+     return Flase
 
 
 
