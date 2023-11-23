@@ -5,13 +5,37 @@ def main():
     else:
         print("Invalid")
 
+
 def is_valid(s):
     s = str(s)
     validated = ""
     numcheck = 0
 
-    symbols = [" ",".","?","!",",",":",";","(",")","[","]","'","_","-",'"',"/","\\","//","`","@","#","*",]
- if len(s) >= 2 and len(s) <= 6:
+    symbols = [
+        " ",
+        ".",
+        "?",
+        "!",
+        ",",
+        ":",
+        ";",
+        "(",
+        ")",
+        "[",
+        "]",
+        "'",
+        "_",
+        "-",
+        '"',
+        "/",
+        "\\",
+        "//",
+        "`",
+        "@",
+        "#",
+        "*",
+    ]
+    if len(s) >= 2 and len(s) <= 6:
         if s[0].isalpha() and s[1].isalpha():
             for ch in s:
                 if ch not in symbols:
@@ -27,13 +51,11 @@ def is_valid(s):
     else:
         return False
 
-    if validated ==s:
-     return True
+    if validated == s:
+        return True
     else:
-     return Flase
-
+        return Flase
 
 
 if __name__ == "__main__":
     main()
-
