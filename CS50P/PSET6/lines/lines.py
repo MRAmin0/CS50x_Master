@@ -23,5 +23,9 @@ def main():
 
 
 def counter(python_file):
-    # count deleting empty l
+    # count deleting empty lines and comment lines
+    rline = 0
 
+    with open(python_file, "r") as lines:
+
+        # 
