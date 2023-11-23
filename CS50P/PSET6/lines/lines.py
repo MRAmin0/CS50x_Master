@@ -1,14 +1,10 @@
-# Say hello
+import sys
+import os
 
-name = input("What's your name? ")
-print(f"hello, {name}")
 
-def is_even(n):
-    if n % 2 == 0:
-        return True
-    else:
-        return False
-isn’t really twice as complex as a function like
-
-def is_even(n):
-    return n % 2 == 0
+def main():
+    #p-file line counter
+    if len(sys.argv) < 2:
+        print("Too few command-line arguments")
+        sys.exit(1)
+    elif len sys.argv() > 
