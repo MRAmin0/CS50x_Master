@@ -29,7 +29,9 @@ def gauge(percentage):
     if int(percentage) >= 99:
         return "F"
     elif int(percentage) < 99 and int(percentage) > 1:
-        re
+        return f"{percentage:.0f}%"
+    else:
+        return "E"
 
 
 if __name__ == "__main__":
