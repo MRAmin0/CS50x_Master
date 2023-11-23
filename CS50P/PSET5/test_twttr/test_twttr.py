@@ -1,4 +1,4 @@
-from twttr import shorteb
+from twttr import shorten
 
 
 def test_shorten():
