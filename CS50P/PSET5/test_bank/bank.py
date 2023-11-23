@@ -6,12 +6,13 @@ def main():
 
 def value(greeting):
 # check how much we owe    ...
-if i.startswith("hello"):
-        a = 0
-    elif i.startswith("h"):
-        a = 20
+
+    if i.lower().startswith("hello"):
+            return 0
+    elif i.lower().startswith("h"):
+            return 20
     else:
-        a = 100
+            return 100
 
 if __name__ == "__main__":
     main()
