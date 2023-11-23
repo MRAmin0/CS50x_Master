@@ -36,7 +36,7 @@ def counter(python_file):
             if (
                 lines.strip().startswith("#")
                 or lines.srtip().startswith("\n")
-                or ines.isspace()
+                or lines.isspace()
             ):
                 rline += 1
     return int(tlines[-1][0]) - rline
