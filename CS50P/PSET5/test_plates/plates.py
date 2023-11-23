@@ -1,31 +1,56 @@
-import string
-import re
-import sys
+symbols = [
+    " ",
+    ".",
+    "?",
+    "!",
+    ",",
+    ":",
+    ";",
+    "(",
+    ")",
+    "[",
+    "]",
+    "'",
+    "_",
+    "-",
+    '"',
+    "/",
+    "\\",
+    "//",
+    "`",
+    "@",
+    "#",
+    "*",
+]
 
 
 def main():
-    plate = input("Plate: ")
+    plate = input("Plate: ").strip()
     if is_valid(plate):
         print("Valid")
-        sys.exit(0)  # Exit with code 0 for success
     else:
         print("Invalid")
-        sys.exit(2)  # Exit with code 2 for failure
 
 
 def is_valid(s):
-    pattern = r"^[A-Za-z]{2}[A-Za-z1-9]{0,1}[A-Za-z0-9]{0,1}$"
-    pattern_2 = (
-        r"^[A-Za-z]{2}[A-Za-z]{0,1}[A-Za-z]{0,1}[A-Za-z1-9]{0,1}[A-Za-z1-9]{0,1}$"
-    )
-
-    if re.match(pattern, s) or re.match(pattern_2, s):
+    validated = ""
+    numcheck = 0
+    if len(s) >= 2 and len(s) <= 6:
+        if s[0].isalpha() and s[1].isalpha():
+            for ch in s:
+                if ch not in symbols:
+                    if ch.isnumeric() and numcheck == 0 and ch != "0":
+                        numcheck += 1
+                        validated += ch
+                    elif ch.isnumeric() and numcheck > 0:
+                        numcheck += 1
+                        validated += ch
+                    elif ch.isalpha() and numcheck == 0:
+                        validated += ch
+    if validated == s:
         return True
-
-    for char in string.punctuation:
-        if char in s:
-            return False
+    else:
+        return False
 
 
-if __name__ == "__main__":
-    main()
+main()
