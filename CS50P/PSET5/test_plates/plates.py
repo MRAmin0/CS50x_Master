@@ -1,3 +1,16 @@
+def main():
+    plate = input("Plate: ").strip()
+    if is_valid(plate):
+        print("Valid")
+    else:
+        print("Invalid")
+
+def is_valid(s):
+    ...
+
+
+if __name__ == "__main__":
+    main()
 symbols = [
     " ",
     ".",
@@ -24,12 +37,7 @@ symbols = [
 ]
 
 
-def main():
-    plate = input("Plate: ").strip()
-    if is_valid(plate):
-        print("Valid")
-    else:
-        print("Invalid")
+
 
 
 def is_valid(s):
