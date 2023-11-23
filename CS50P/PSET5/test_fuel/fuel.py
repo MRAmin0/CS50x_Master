@@ -10,6 +10,7 @@ def main():
 
 
 def convert(fraction):
+    
     if "/" in fraction:
         x, y = fraction.split("/", 1)
     else:
