@@ -1,18 +1,19 @@
-vowel = ["a", "o", "u", "i", "e"]
-input = input("Input : ").strip()
-output = ""
-for letter in input:
-    if letter.lower() not in vowel:
-        output += letter
+vowel = ["a", "e", "o", "u", "i"]
 
-print(f"Output: {output}")
+
 def main():
-    ...
+    input = str(input("Input : ").strip())
+    print(f"Output: {shorten(input)}")
 
 
 def shorten(word):
-    ...
+    output = ""
+    # check all letters
+    for letter in word:
+        if letter.lower() not in vowel:
+            output += letter
 
+    return output
 
 if __name__ == "__main__":
     main()
