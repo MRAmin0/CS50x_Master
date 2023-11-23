@@ -32,13 +32,14 @@ def counter(python_file):
         tlines = list(enumerate(lines.readlines(), start=1))
 
         # check if each line is code or not
-        for nline, line in tlines:
+        for nline, lines in tlines:
             if (
                 lines.strip().startswith("#")
                 or lines.srtip().startswith("\n")
                 or lines.isspace()
             ):
                 rline += 1
+    # [-1] yani az akhar biya aval
     return int(tlines[-1][0]) - rline
 
 
