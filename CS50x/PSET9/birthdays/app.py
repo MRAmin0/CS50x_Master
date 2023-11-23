@@ -33,7 +33,7 @@ def index():
         year = request.form.get("year")
 
         db.execute(
-            "INSERT INTO birthdays (first_name, last_name, day, month, year) VALUES (?, ?, ?, ?, ?)",
+            "INSERT INTO birthday (first_name, last_name, day, month, year) VALUES (?, ?, ?, ?, ?)",
             first_name,
             last_name,
             day,
