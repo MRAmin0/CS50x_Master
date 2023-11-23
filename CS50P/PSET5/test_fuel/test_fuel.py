@@ -11,7 +11,7 @@ def test_convert():
 
     # not int check
     with pytest.raises(ValueError):
-        convert("3/4")
+        convert("x/y")
 
     # Zero devision check
     with pytest.raises(ZeroDivisionError):
