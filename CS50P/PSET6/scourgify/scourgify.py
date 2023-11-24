@@ -30,7 +30,7 @@ def scourgify(input_file, output_file):
         # open input file amd write the final version to output
     with open(output_file, "w") as csv_wfile:
         fname = ["first", "last", "house"]
-        cw = csv.DictReader(csv_wfile, fieldnames=fname)
+        cw = csv.DictWriter(csv_wfile, fieldnames=fname)
 
         # write the header to output file
         cw.writeheader()
