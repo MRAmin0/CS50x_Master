@@ -12,7 +12,7 @@ def main():
         print("Too many command-line arguments")
         sys.exit(1)
     elif not os.path.isfile(sys.argv[1]):
-        print(f"Invalid input - Path")
+        print("Invalid input - Path")
         sys.exit(1)
     elif not fcheck(sys.argv[1]) and fcheck(sys.argv[2]):
         print("Invalid input")
