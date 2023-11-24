@@ -17,8 +17,11 @@ def main():
         print("Invalid input")
         sys.exit(1)
     elif not fsame(sys.argv[1], sys.argv[2]):
-        print("Invalid input")
+        print("Input and output have different extensions")
         sys.exit(1)
     else:
-        # true mode
-        scourgify(sys.argv[1], sys.argv[2])
+        # pass to shirtwera func
+        shirtwear(sys.argv[1], sys.argv[2])
+
+
+
