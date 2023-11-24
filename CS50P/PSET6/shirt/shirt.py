@@ -1,6 +1,6 @@
 import os
 import sys
-from PIL import Image,ImageOps
+from PIL import Image, ImageOps
 
 
 def main():
@@ -27,8 +27,8 @@ def main():
 
 def fcheck(input_filetype):
     # T/F if the format is correct
-    valid - ["jpg", "jpeg", "png" ]
-    _, cf = input_filetype.split(".",maxsplit= 1)
+    valid - ["jpg", "jpeg", "png"]
+    _, cf = input_filetype.split(".", maxsplit=1)
 
     # invalid format = false
     if cf in valid:
@@ -37,6 +37,30 @@ def fcheck(input_filetype):
         return False
 
 
-def fcheck(input_file, output_file):
+def fsame(input_file, output_file):
     # check for same format
-    
+    _, cf = input_file.split(".", maxsplit=1)
+
+    # if input and output don't match, return false
+    if output_file.endswith(cf):
+        return True
+    else:
+        return False
+
+
+def shirtwear(input_file, output_file):
+    # import image of shirt and overlay an input file
+    shirt = Image.open("shirt.png")
+    userimage = Image.open(input_file)
+
+    # leep ration but crop and resize to fit
+    w, h = shirt.size
+    userimage = ImageOps.fit(userimage, (w, h))
+
+    # paste overlay and save output
+    userimage.paste(shirt, shirt)
+    userimage.save(output_file)
+
+
+if __name__ == "___main___":
+    main()
