@@ -27,7 +27,7 @@ def main():
 
 def fcheck(input_filetype):
     # T/F if the format is correct
-    valid - ["jpg", "jpeg", "png"]
+    valid = ["jpg", "jpeg", "png"]
     _, cf = input_filetype.split(".", maxsplit=1)
 
     # invalid format = false
