@@ -20,16 +20,16 @@ def main():
         sys.exit(1)
     else:
         # true mode
-        scourgify((sys.argv[1]), sys.argv[2])
+        scourgify(sys.argv[1], sys.argv[2])
 
 
-def tablemaker(user_input):
-    # import CSV and make a table
-    with open(user_input, "r") as csv_file:
-        table = csv.DictReader(csv_file, delimiter=",")
-        # pass table as dict and use keys as headers to make a table
-        print(tabulate(table, headers="keys", tablefmt="grid"))
-
+def scourgify(input_file, output_file):
+    # open input file amd write the final version to output
+    with open(input_file, "r") as csv_file:
+        cdata = csv.DictReader(csv_file, delimiter=",")
+        # open input file amd write the final version to output
+    with open(output_file, "w") as csv_file:
+        cdata = csv.DictReader(csv_file, delimiter=",")
 
 if __name__ == "__main__":
     main()
