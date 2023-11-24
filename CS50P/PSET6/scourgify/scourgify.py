@@ -1,6 +1,7 @@
 import os
 import sys
-from PIL import Iamge, ImageOps
+import csv
+from PIL import Image, ImageOps
 
 
 def main():
@@ -11,15 +12,15 @@ def main():
     elif len(sys.argv) > 3:
         print("Too many command-line arguments")
         sys.exit(1)
-    elif not os.path.isfile(sys.argv[1]):
-        print("File foes not exist")
-        sys.exit(1)
     elif not sys.argv[1].endswith(".csv"):
         print("Not a CSV file")
         sys.exit(1)
+    elif not os.path.isfile(sys.argv[1]):
+        print(f"Could not read{sys.argv[1]}")
+        sys.exit(1)
     else:
         # true mode
-        tablemaker(sys.argv[1])
+        scourgify((sys.argv[1]), sys.argv[2])
 
 
 def tablemaker(user_input):
