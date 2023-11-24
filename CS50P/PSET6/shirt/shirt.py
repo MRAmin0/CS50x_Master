@@ -25,7 +25,18 @@ def main():
         shirtwear(sys.argv[1], sys.argv[2])
 
 
-def fchecl(input_filetype):
+def fcheck(input_filetype):
     # T/F if the format is correct
     valid - ["jpg", "jpeg", "png" ]
     _, cf = input_filetype.split(".",maxsplit= 1)
+
+    # invalid format = false
+    if cf in valid:
+        return True
+    else:
+        return False
+
+
+def fcheck(input_file, output_file):
+    # check for same format
+    
