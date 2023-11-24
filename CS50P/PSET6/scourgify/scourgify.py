@@ -25,11 +25,19 @@ def main():
 
 def scourgify(input_file, output_file):
     # open input file amd write the final version to output
-    with open(input_file, "r") as csv_file:
-        cdata = csv.DictReader(csv_file, delimiter=",")
+    with open(input_file, "r") as csv_rfile:
+        cdata = csv.DictReader(csv_rfile, delimiter=",")
         # open input file amd write the final version to output
-    with open(output_file, "w") as csv_file:
-        cdata = csv.DictReader(csv_file, delimiter=",")
+    with open(output_file, "w") as csv_wfile:
+        fname = ["first","last","house"]
+        cw = csv.DictReader(csv_wfile, fieldnames=fname)
+
+        # write the header to output file
+        cw.writeheader()
+
+        # write source to output
+        for i in cdata:
+            last,first = i["name"]
 
 if __name__ == "__main__":
     main()
