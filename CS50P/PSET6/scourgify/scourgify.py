@@ -40,7 +40,9 @@ def scourgify(input_file, output_file):
             last, first = i["name"].split(",")
             house = i["house"]
 
-            cw.writerow({})
+            cw.writerow({
+                "first": first.strip(), "last": last, "house":house
+            })
 
 
 if __name__ == "__main__":
