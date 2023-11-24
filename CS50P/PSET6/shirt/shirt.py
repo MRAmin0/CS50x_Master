@@ -62,5 +62,5 @@ def shirtwear(input_file, output_file):
     userimage.save(output_file)
 
 
-if __name__ == "___main___":
+if __name__ == "__main__":
     main()
