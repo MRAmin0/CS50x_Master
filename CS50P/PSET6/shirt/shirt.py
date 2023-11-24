@@ -2,6 +2,7 @@ import os
 import sys
 from PIL import Image,ImageOps
 
+
 def main():
     # check command-line arguments
     if len(sys.argv) < 3:
@@ -24,4 +25,7 @@ def main():
         shirtwear(sys.argv[1], sys.argv[2])
 
 
-
+def fchecl(input_filetype):
+    # T/F if the format is correct
+    valid - ["jpg", "jpeg", "png" ]
+    _, cf = input_filetype.split(".",maxsplit= 1)
