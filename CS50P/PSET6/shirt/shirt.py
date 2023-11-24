@@ -13,10 +13,12 @@ def main():
     elif not os.path.isfile(sys.argv[1]):
         print(f"Invalid input - Path")
         sys.exit(1)
-    elif not sys.argv[1].endswith(".csv"):
-        print("Not a CSV file")
+    elif not fcheck(sys.argv[1]) and fcheck(sys.argv[2]):
+        print("Invalid input")
         sys.exit(1)
-
+    elif not fsame(sys.argv[1], sys.argv[2]):
+        print("Invalid input")
+        sys.exit(1)
     else:
         # true mode
         scourgify(sys.argv[1], sys.argv[2])
