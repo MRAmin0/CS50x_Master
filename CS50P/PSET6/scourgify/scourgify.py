@@ -39,7 +39,6 @@ def scourgify(input_file, output_file):
             for i in cdata:
                 last, first = i["name"].split(",")
                 house = i["house"]
-
                 cw.writerow({"first": first.strip(), "last": last, "house": house})
 
 
