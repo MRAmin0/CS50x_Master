@@ -26,19 +26,15 @@ def after_request(response):
 def index():
     if request.method == "POST":
         # TODO: Add the user's entry into the database
-        first_name = request.form.get("first_name")
-        last_name = request.form.get("last_name")
-        day = request.form.get("day")
+        first_name = request.form.get("name")
         month = request.form.get("month")
-        year = request.form.get("year")
+        day = request.form.get("day")
 
         db.execute(
-            "INSERT INTO birthdays (first_name, last_name, day, month, year) VALUES (?, ?, ?, ?, ?)",
+            "INSERT INTO birthdays (name,month,day) VALUES (?, ?, ?)",
             first_name,
-            last_name,
-            day,
             month,
-            year,
+            day,
         )
         birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", birthdays=birthdays)
