@@ -244,7 +244,7 @@ def register():
 
         # Ensure username is at least 4 characters long
         if len(username) < 4:
-            return apology("Username must be at least 4 characters long!", 403)
+            return apology("Username must be at least 4 characters long!", 400)
 
         # # Ensure username consists only of characters and digits
         # if not username.isalnum():
