@@ -167,7 +167,7 @@ def login():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("Must provide username!", 403)
+            return apology("Must provide username!", 400)
 
         # Ensure password was submitted
         if not request.form.get("password"):
