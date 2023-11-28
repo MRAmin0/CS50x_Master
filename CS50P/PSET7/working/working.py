@@ -27,6 +27,11 @@ def convert(s):
                     # checck if out of bound
                     if int(hm.group(1)) < 12 or int(hm.group(1)) < 1:
                         raise ValueError
+                    elif int(hm.group(1)) == 12:
+                        hours.appen(f"00:{hm.group(2)}")
+
+                    elif int(hm.group(1)) <= 9:
+                        hours.append()
 
 
 ...
