@@ -28,10 +28,33 @@ def convert(s):
                     if int(hm.group(1)) < 12 or int(hm.group(1)) < 1:
                         raise ValueError
                     elif int(hm.group(1)) == 12:
-                        hours.appen(f"00:{hm.group(2)}")
+                        hours.append(f"00:{hm.group(2)}")
 
                     elif int(hm.group(1)) <= 9:
-                        hours.append()
+                        hours.append(f"0{hm.group(1)}:{hm.group(2)}")
+
+
+
+                    else:
+                        hours.append(f"0{hm.group(1)}:{hm.group(2)}")
+                # check if 12H simple time
+                elif hh := re.match(r"^(1[0-2]|0?[1-9])",wt):
+                    if int(wt) > 12 or int(wt) < 1:
+                        raise ValueError
+                    elif int(hh.group(1)) == 12:
+                        hours.append(f"00:00")
+
+                    elif int(hh.group(1)) <= 9:
+                        hours.append(f"0{hh.group(1)}:00")
+
+                    else:
+                        hours.append(f"{hh.group(1)}:00")
+                else:
+                    raise ValueError
+
+            #check if PM
+            if " pm" in str(wt).lower()
+            wt = str(wt).lower().strip(" pm")
 
 
 
