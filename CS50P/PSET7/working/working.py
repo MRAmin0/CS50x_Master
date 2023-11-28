@@ -34,7 +34,7 @@ def convert(s):
                         hours.append()
 
 
-...
+
 
 
 if __name__ == "__main__":
