@@ -3,10 +3,11 @@ import re
 
 
 def main():
-    print(convert(input("Hours: ").strip()))
+    print(convert(input("Hours: ")))
 
 
 def convert(s):
+    re
     # convert 12H to 24H format
     times = []
     hours = []
