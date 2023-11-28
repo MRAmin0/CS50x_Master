@@ -55,6 +55,18 @@ def convert(s):
             #check if PM
             if " pm" in str(wt).lower()
             wt = str(wt).lower().strip(" pm")
+             if " am" in str(wt).lower():
+                wt = str(wt).lower().strip(" am")
+                # check if 12H format complex
+                if hm := re.match(r"^(1[0-2]|0?[1-9]):([0-5]?[0-9])$",wt):
+                    # checck if out of bound
+                    if int(hm.group(1)) < 12 or int(hm.group(1)) < 1:
+                        raise ValueError
+                    elif int(hm.group(1)) == 12:
+                        hours.append(f"00:{hm.group(2)}")
+
+                    elif int(hm.group(1)) <= 9:
+                        hours.append(f"0{hm.group(1)}:{hm.group(2)}")
 
 
 
