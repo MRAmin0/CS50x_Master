@@ -20,6 +20,10 @@ def convert(s):
         for wt in times:
             # check if AM
             if " am" in str(wt).lower():
+                wt = str(wt).lower().strip(" am")
+
+                # check if 12H format complex
+                if hm := re.match(r"^(1[0-2]|0?[1-9]):([0-5])")
 
 ...
 
