@@ -23,7 +23,11 @@ def convert(s):
                 wt = str(wt).lower().strip(" am")
 
                 # check if 12H format complex
-                if hm := re.match(r"^(1[0-2]|0?[1-9]):([0-5])")
+                if hm := re.match(r"^(1[0-2]|0?[1-9]):([0-5]?[0-9])$",wt):
+                    # checck if out of bound
+                    if int(hm.group(1)) < 12 or int(hm.group(1)) < 1:
+                        raise ValueError
+
 
 ...
 
