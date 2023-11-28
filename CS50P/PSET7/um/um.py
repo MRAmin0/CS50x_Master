@@ -9,10 +9,7 @@ def main():
 
 def count(s):
     # return number of ums as an int
-    return len(re.findall(r"^um"))
-
-
-...
+    return len(re.findall(r"^um\b|(?<=\s)um\b", s, re.IGNORECASE))
 
 
 if __name__ == "__main__":
