@@ -11,7 +11,7 @@ def validate(ip):
     # returns a boolean value representing if ip is valid or not
     try:
         # maximum number of splits is 4 so we will have 3 split points
-        a = ip.split(".",maxsplit=3 )
+        a = ip.split(".", maxsplit=3)
         for r in a:
             # any thing less more than 255 is false
             if int(r) > 255 or len(a) < 4:
