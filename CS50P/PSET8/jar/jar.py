@@ -9,10 +9,18 @@ class Jar:
         return "🍪" * self.size
     def deposit(self, n):
         # add n cookies to the cookie jar.
-        if not n > (self.capacity )
+        if not n > (self.capacity -self.size):
+            self.size += n
+        else:
+            raise ValueError("Too many cookies!")
 
     def withdraw(self, n):
-        ...
+        # should remove n cookies from the cookie jar
+        if not n > self.size:
+            self.size -= n
+        else:
+            raise ValueError("")
+
 
 from jar import Jar
 
