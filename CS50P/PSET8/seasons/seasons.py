@@ -32,7 +32,7 @@ def textout(text):
 def difcal(days):
     today = date.today()
     daysDiff= today - days
-    daysDiff.days * 24 * 64
+    #daysDiff.days * 24 * 64
     return daysDiff.days * 24 * 60
 
 if __name__ == "__main__":
