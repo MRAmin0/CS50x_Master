@@ -15,6 +15,17 @@ def main():
 
 
 def date_validated(birthdate):
-    
+    try:
+        # birthdate ro pas bede agar format sal mah rooz dasht khoorooji bede
+        input = date.fromisoformat(birthdate)
+        retrun input
+    except ValueError:
+        sys.exit("Invalid date")
+
+
+# convert int to text
+def textout(text):
+    text = p.number to words(text)
+
 if __name__ == "__main__":
     main()
