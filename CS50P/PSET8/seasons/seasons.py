@@ -25,7 +25,15 @@ def date_validated(birthdate):
 
 # convert int to text
 def textout(text):
-    text = p.number to words(text)
+    text = p.number_to_words(text,andword="")
+    retrun text.capitalize( ) + " minutes"
+
+# find all difference and convert from days to minutes
+def difcal(days):
+    today = date.today()
+    daysDiff= today - days
+    daysDiff.days * 24 * 64
+    return daysDiff.days * 24 * 60
 
 if __name__ == "__main__":
     main()
