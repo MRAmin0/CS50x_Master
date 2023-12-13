@@ -19,7 +19,8 @@ class Jar:
         if not n > self.size:
             self.size -= n
         else:
-            raise ValueError("")
+            raise ValueError("Too few cookies!")
+        
 
 
 from jar import Jar
