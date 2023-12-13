@@ -20,36 +20,35 @@ class Jar:
             self.size -= n
         else:
             raise ValueError("Too few cookies!")
-        
 
-
-from jar import Jar
-
-
-def test_init():
-    ...
-
-
-def test_str():
-    jar = Jar()
-    assert str(jar) == ""
-    jar.deposit(1)
-    assert str(jar) == "🍪"
-    jar.deposit(11)
-    assert str(jar) == "🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪"
-
-
-def test_deposit():
-    ...
-
-
-def test_withdraw():
-    ...
-
+    # getter
     @property
     def capacity(self):
-        ...
+        # return the cookie jar's capacity
+        return self._capacity
 
     @property
     def size(self):
-        ...
+        #return the number of cookies actually in the cookie jar
+        return self._size
+
+    # setter
+    @capacity.setter
+    def capacity(self , capacity):
+        if not int(capacity) > 0:
+            raise ValueError("Not a non-negative integer.")
+        self._capacity = capacity
+
+    @size.setter
+    def size(self , size):
+        if int(siez) < 0"
+            raise ValueError
+        else:
+            self._size = size
+
+def main():
+    # Run the main code
+    if __name__ = "__name__":
+        main()
+
+
