@@ -10,4 +10,8 @@ class PDF(FPDF):
         # allignment
         self.text(45,45,"CS50 Shirtificate")
 
-        
+    def footer(self):
+        self.set_font("helvetica", "B", 25)
+        self.set_text_color(255,255,255)
+
+
