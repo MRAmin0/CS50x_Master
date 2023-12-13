@@ -7,6 +7,7 @@ class Jar:
     def __str__(self):
         # return a str with 🍪, where is the number of cookies
         return "🍪" * self.size
+    
     def deposit(self, n):
         # add n cookies to the cookie jar.
         if not n > (self.capacity -self.size):

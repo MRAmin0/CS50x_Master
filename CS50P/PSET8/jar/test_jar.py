@@ -30,7 +30,34 @@ def test_capacity():
 def test_size():
     # new jar = 0
     chocolate_cookie_jar = Jar()
-    
+    crunchy_cookie_jar = Jar()
+
+    assert crunchy_cookie_jar.size == 0
+    assert chocolate_cookie_jar.size == 0
+
+    # check that jar size can not be manually instahtiated with new
+    with pytest.raises(ValueError):
+        double_fudge_brownies = Jar(12,-1)
+
+
+def test_deposit():
+  # check deposit and cookies
+  test1 = Jar(10)
+  test1.deposit(4)
+  assert test1.size == 4
+
+  check1 = Jar(12, 11)
+  with pytest.raises(ValueError):
+      check1.deposit(2)
+
+def test_capacity_property():
+    # capacity return total capacity if the instance
+    jartest1 = Jar(24)
+    assert jartest1.capacity == 24
+
+    def test_size_property():
+        # return the total size of the instance
+
 
 def test_str():
     jar = Jar()
@@ -41,8 +68,6 @@ def test_str():
     assert str(jar) == "🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪"
 
 
-def test_deposit():
-    ...
 
 
 def test_withdraw():
