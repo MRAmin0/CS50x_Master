@@ -57,6 +57,27 @@ def test_capacity_property():
 
     def test_size_property():
         # return the total size of the instance
+        jartest1 = Jar(24)
+        assert jartest1.capacity == 24
+
+def test_size_property():
+    # returns the total size of the instance
+    jartest1 = Jar(32)
+    jartest1.deposit(32)
+    jartest1.withdraw(12)
+    assert jartest1.size == 20
+
+
+def test_withdraw():
+    # withdraw remoevs correct
+    jartest1 = Jar(4)
+    jartest1.deposit(3)
+    jartest1.withdraw(2)
+    assert jartest1.size == 1
+
+    check1 = Jar(12, 11)
+    with pytest.raises(ValueError):
+        check1.withdraw(12)
 
 
 def test_str():
@@ -70,5 +91,3 @@ def test_str():
 
 
 
-def test_withdraw():
-    ...
