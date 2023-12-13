@@ -19,7 +19,7 @@ class PDF(FPDF):
 
 
 # pdf output
-a = input("what's your name ? ").strip().Title()
+a = input("what's your name ? ").strip().title()
 filepdf = PDF()
 filepdf.add_page
 filepdf.output("shirtificate.pdf")
