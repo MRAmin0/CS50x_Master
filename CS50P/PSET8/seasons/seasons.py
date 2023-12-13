@@ -12,6 +12,7 @@ def main():
     output = textout(difdays)
     print(output)
 
+
 def date_validate(birthdate):
     try:
         # birthdate ro pas bede agar format sal mah rooz dasht khoorooji bede
