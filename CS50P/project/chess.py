@@ -1,6 +1,6 @@
 import chess
 import chess.svg
-from IPython.display import SVG
+from IPython.display import display, SVG
 
 def print_board(board):
     return SVG(chess.svg.board(board=board))
