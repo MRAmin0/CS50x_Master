@@ -14,7 +14,7 @@ SCREEN_HEIGHT = 400
 # Function to draw the chessboard
 def draw_board(screen, board):
     chessboard_svg = chess.svg.board(board=board)
-    chessboard_png = cairosvg.svg2png(chessboard_svg.encode("UTF-8"))
+    chessboard_png = cairosvg.svg2png(bytestring=chessboard_svg.encode("UTF-8"))
     chessboard_surface = pygame.image.load_extended(BytesIO(chessboard_png))
     screen.blit(chessboard_surface, (0, 0))
 
