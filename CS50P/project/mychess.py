@@ -1,24 +1,44 @@
+import pygame
+import sys
 import chess
 import chess.svg
-from IPython.display import display, SVG
 
-def print_board(board):
-    return SVG(chess.svg.board(board=board))
+# Initialize Pygame
+pygame.init()
 
+# Constants
+SCREEN_WIDTH = 400
+SCREEN_HEIGHT = 400
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+# Function to draw the chessboard
+def draw_board(screen, board):
+    chessboard = chess.svg.board(board=board).encode("UTF-8")
+    chessboard_surface = pygame.image.load_extended(pygame.compat.BytesIO(chessboard))
+    screen.blit(chessboard_surface, (0, 0))
+
+# Main function
 def main():
+    # Create Pygame screen
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption("Chess Game")
+
+    # Create a chessboard
     board = chess.Board()
-    display(print_board(board))
 
-    while not board.is_game_over():
-        move_uci = input("Enter your move (in UCI format, e.g., 'e2e4'): ")
-        if chess.Move.from_uci(move_uci) in board.legal_moves:
-            board.push(chess.Move.from_uci(move_uci))
-        else:
-            print("Invalid move! Try again.")
+    # Main game loop
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
-        display(print_board(board))
+        # Draw the chessboard
+        draw_board(screen, board)
 
-    print("Game Over!")
+        # Update the display
+        pygame.display.flip()
 
 if __name__ == "__main__":
     main()
