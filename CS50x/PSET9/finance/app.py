@@ -78,8 +78,6 @@ def index():
     )
 
 
-
-
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():

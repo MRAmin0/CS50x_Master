@@ -1,4 +1,6 @@
 <!-- The 'Buy' Page -->
+
+
 {% extends "layout.html" %}
 
 {% block title %}
@@ -20,55 +22,3 @@
         </div>
     </form>
 {% endblock %}
-
-<!-- {% extends "layout.html" %}
-
-{% block title %}
-    Buy Shares
-{% endblock %}
-
-{% block main %}
-    <form action="/buy" method="post">
-        <div class="mb-3">
-            <label class="mb-3 fw-bold" for="buy">Buy Shares</label>
-            <input class="form-control mx-auto w-auto mb-3" type="text" id="symbol" name="symbol" placeholder="Symbol" minlength="1" required>
-            <input class="form-control mx-auto w-auto mb-3" type="number" id="shares" name="shares" placeholder="Shares" min="1" required>
-            {% if stock %}
-                <p>Stock Name: {{ stock.name }}</p>
-                <p>Stock Symbol: {{ stock.symbol }}</p>
-                <p>Stock Price: {{ stock.price }}</p>
-            {% endif %}
-            <button class="btn btn-primary btn-sm" type="submit">Buy 112.00</button>
-        </div>
-    </form>
-{% endblock %} -->
-
-<!-- {% block main %} -->
-
-    <!-- <form action="/buy" method="post">
-        <div class="mb-3">
-            <label class="mb-3 fw-bold" for="buy">Buy Shares</label>
-            <input class="form-control mx-auto w-auto mb-3" type="text" id="symbol" name="symbol" placeholder="Symbol" minlength="1" required>
-            <input class="form-control mx-auto w-auto mb-3" type="number" id="shares" name="shares" placeholder="Shares" min="1" required>
-            <button class="btn btn-primary btn-sm" type="submit">Buyclear</button>
-            <button class="btn btn-primary btn-sm" type="submit">Buy {{ stock["price"] * int(shares) | usd }}</button>
-        </div>
-    </form> -->
-
-<!-- {% block main %}
-    <form action="/buy" method="post">
-        <div class="mb-3">
-            <label class="mb-3 fw-bold" for="buy">Buy Shares</label>
-            <input class="form-control mx-auto w-auto mb-3" type="text" id="symbol" name="symbol" placeholder="Symbol" minlength="1" required>
-            <input class="form-control mx-auto w-auto mb-3" type="number" id="shares" name="shares" placeholder="Shares" min="1" required>
-            {% if stock %}
-                <p>Stock Name: {{ stock.name }}</p>
-                <p>Stock Symbol: {{ stock.symbol }}</p>
-                <p>Stock Price: {{ stock.price }}</p>
-            {% endif %}
-            <button class="btn btn-primary btn-sm" type="submit">Buy 112.00</button>
-        </div>
-    </form>
-{% endblock %} -->
-
-
