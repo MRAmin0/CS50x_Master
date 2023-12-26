@@ -1,4 +1,4 @@
-<!-- The 'Buy' Page -->
+<!-- The 'Buy' Page
 
 {% extends "layout.html" %}
 
@@ -12,6 +12,29 @@
             <label class="mb-3 fw-bold" for="buy">Buy Shares</label>
             <input class="form-control mx-auto w-auto mb-3" type="text" id="symbol" name="symbol" placeholder="Symbol" minlength="1" required>
             <input class="form-control mx-auto w-auto mb-3" type="number" id="shares" name="shares" placeholder="Shares" min="1" required>
+            <button class="btn btn-primary btn-sm" type="submit">Buy</button>
+        </div>
+    </form>
+{% endblock %} -->
+<!-- The 'Buy' Page -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Shares
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <label class="mb-3 fw-bold" for="buy">Buy Shares</label>
+            <input class="form-control mx-auto w-auto mb-3" type="text" id="symbol" name="symbol" placeholder="Symbol" minlength="1" required>
+            <input class="form-control mx-auto w-auto mb-3" type="number" id="shares" name="shares" placeholder="Shares" min="1" required>
+            {% if stock %}
+                <p>Stock Name: {{ stock.name }}</p>
+                <p>Stock Symbol: {{ stock.symbol }}</p>
+                <p>Stock Price: {{ usd(stock.price) }}</p>
+                <p>Transaction Value: {{ usd(stock.price * int(request.form.get("shares"))) }}</p>
+            {% endif %}
             <button class="btn btn-primary btn-sm" type="submit">Buy</button>
         </div>
     </form>
