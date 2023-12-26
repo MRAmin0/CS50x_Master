@@ -1,6 +1,5 @@
 <!-- The 'Buy' Page -->
 
-
 {% extends "layout.html" %}
 
 {% block title %}
@@ -13,12 +12,7 @@
             <label class="mb-3 fw-bold" for="buy">Buy Shares</label>
             <input class="form-control mx-auto w-auto mb-3" type="text" id="symbol" name="symbol" placeholder="Symbol" minlength="1" required>
             <input class="form-control mx-auto w-auto mb-3" type="number" id="shares" name="shares" placeholder="Shares" min="1" required>
-            {% if stock %}
-                <p>Stock Name: {{ stock.name }}</p>
-                <p>Stock Symbol: {{ stock.symbol }}</p>
-                <p>Stock Price: {{ stock.price }}</p>
-            {% endif %}
-            <button class="btn btn-primary btn-sm" type="submit">Buy{{value | usd}}</button>
+            <button class="btn btn-primary btn-sm" type="submit">Buy</button>
         </div>
     </form>
 {% endblock %}
