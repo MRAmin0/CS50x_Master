@@ -82,7 +82,6 @@ def index():
 @login_required
 def buy():
     # User reached route via POST (as by submitting a form via POST)
-   
     if request.method == "POST":
         user_id = session["user_id"]
         symbol = request.form.get("symbol")
@@ -142,7 +141,8 @@ def buy():
 
     # User reached route via GET (as by clicking a link or via redirect)
     user_cash = 0  # Define a default value for user_cash
-    return render_template("buy.html")
+        return render_template("buy.html", stock=stock)
+
 
 
 @app.route("/history")
