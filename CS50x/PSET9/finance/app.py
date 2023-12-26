@@ -88,7 +88,7 @@ def buy():
         stock = lookup(symbol)
         shares = request.form.get("shares")
 
-    # Checking for symbol to be valid
+        # Checking for symbol to be valid
         if not symbol or not stock:
             return apology("Symbol is not valid!")
 
@@ -141,7 +141,7 @@ def buy():
 
     # User reached route via GET (as by clicking a link or via redirect)
     user_cash = 0  # Define a default value for user_cash
-        return render_template("buy.html", stock=stock)
+    return render_template("buy.html", stock=stock)
 
 
 @app.route("/history")
