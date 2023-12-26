@@ -141,7 +141,7 @@ def buy():
 
     # User reached route via GET (as by clicking a link or via redirect)
     user_cash = 0  # Define a default value for user_cash
-        return render_template("buy.html", stock=stock)
+    return render_template("buy.html", stock=stock)
 
 
 
