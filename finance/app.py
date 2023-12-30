@@ -99,7 +99,7 @@ def buy():
             shares,
             stock["price"],
             stock["price"],
-            get_time(),
+            # get_time(),
             stock["price"],
         )
         # Add transaction to hestory db
