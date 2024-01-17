@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="../Css/Style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
+</head>
+
+<body>
+
+
+    <section id="header">
+        <a href="#"><img src="../Image/logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a class="active" href="Blog.html">Blog</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="Cart.html"><i class="fa fa-shopping-bag "></i></a></li>
+                <a href="#" id="closing"><i class="fa fa-times"></i></a>
+
+
+
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="Cart.html"><i class="fa fa-shopping-bag "></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+
+        </div>
+
+
+    </section>
+    <section id="page-header" class="blog-header2">
+
+    </section>
+    <section id="blog">
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="../Image/blog/GOWR/GOWR5.jpg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>God of War Ragnarök Review</h4>
+                <p>God of War (2018) was a smash hit for Sony. God of War had always sold well, you don't get to be the
+                    13th release in a series for nothing, but more so in the 4 to 5 million range with God of War III
+                    (the end of the perceived trilogy) making its way past 7 million thanks to a handy PS4 remasters.
+                </p>
+                <a href="GOWRB.html">Continue Reading</a>
+            </div>
+        </div>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="../Image/blog/HFWBS/HFWBS1.jpg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>Horizon Forbidden West: Burning Shores Review</h4>
+                <p> Set some time after the events of Forbidden West, Burning Shores sees Aloy travel to the titular
+                    location, a volcanic archipelago that used to be Los Angels. Her mission? To hunt down Walter
+                    Londra: the last living Far Zenith. Shortly after arriving Aloy meets Seyka, a member of the Quen
+                    Tribe. She and her fellow Quen ended up becoming stranded in the Burning Shores.</p>
+                <a href="HFWBSB.html">Continue Reading</a>
+            </div>
+        </div>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="../Image/blog/LIS/LIS5.jpg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>Life is Strange Review</h4>
+                <p>With a myriad of narrative driven choice games following the success of Heavy Rain, its refreshing
+                    to see such a unique take on the concept with Life Is Strange.</p>
+                <a href="LisB.html">Continue Reading</a>
+            </div>
+        </div>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="../Image/blog/HZD/HZD2.jpg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>Horizon Zero Dawn Review</h4>
+                <p>Aloy, cast out from the Nora tribe at birth and ever curious about her mysterious origins, is told by
+                    Rost, a fellow outcast and the man who raised her, that if she wins the Proving, a ceremony
+                    competition, she can ask the tribe's leaders for answers</p>
+                <a href="HZDB.html">Continue Reading</a>
+            </div>
+        </div>
+        <div class="blog-box">
+            <div class="blog-img">
+                <img src="../Image/blog/SOTR/SOTR4.jpg" alt="">
+            </div>
+            <div class="blog-details">
+                <h4>Shadow of the Tomb Raider Review</h4>
+                <p> Closing out the most recent set of Tomb Raider games, dubbed the 'Survivor Trilogy, is 2018's Shadow
+                    of the Tomb Raider. It capped off this 'origin story' for Lara sending her into the jungles of Peru
+                    and focusing on bringing her character closer to that of her original incarnation.</p>
+                <a href="SOTRB.html">Continue Reading</a>
+            </div>
+        </div>
+    </section>
+    <section id="pagination" class="Se-p1">
+        <a href="Blog.html">1</a>
+        <a href="Blog2.html">2</a>
+        <a href="Blog.html"><i class="fa fa-long-arrow-alt-left"></i></a>
+
+    </section>
+    <section id="Newsletters" class="Se-p1 Se-m1">
+        <div class="newstext">
+            <h4>Sign up</h4>
+            <p>Enter your Gmail To Get The Latest News From The Gaming World</p>
+        </div>
+
+        <form class="form" onsubmit="return handle_form_submission()">
+            <input type="email" placeholder="Enter Your Gmail Account" required tabindex="1" pattern=".+@gmail\.com" onmouseover="showMess()"
+            onmouseout="hideMess()">
+            <p id="mess"
+                style="display: none; background-color: none; position: absolute; margin-top: 60px; color: khaki;">
+                Please Enter Only Gmail Account</p>
+            <button class="normal" type="submit">Sign Up</button>
+        </form>
+        <script>
+            function handle_form_submission() {
+                alert('Thanks For Signing Up');
+
+            }
+            function showMess() {
+                var message = document.getElementById("mess");
+                message.style.display = "block";
+            }
+
+            function hideMess() {
+                var message = document.getElementById("mess");
+                message.style.display = "none";
+            }
+        </script>
+    </section>
+    <footer class="Se-p1">
+        <div class="col">
+
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>&nbsp;iran tehran Majidieh</p>
+            <p><strong>phone:</strong>&nbsp;09197287108</p>
+            <div class="followus">
+                <h4>Social Media</h4>
+                <div class="icon">
+                    <a href="#"><i class="fa-brands fa-facebooke"></i></a>
+                    <a href="https://t.me/Just_a_Vampire"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <a href="About.html">About Us</a>
+            <a href="Login.html">Login</a>
+            <a href="Cart.html">View Cart</a>
+            <a href="CVM.html">My CV</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+        <div class="col">
+
+            <a href="#">Delivery information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My order</a>
+            <a href="#">Terms &amp; Conditions</a>
+
+        </div>
+        <div class="col install">
+            <img src="../Image/pay.png" alt="" class="pay">
+            <div class="row">
+                <img class="logo" src="../Image/logo.png" alt="">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2023 Ali Moradi. All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="../Js/Scprit.js"></script>
+</body>
+
+</html>

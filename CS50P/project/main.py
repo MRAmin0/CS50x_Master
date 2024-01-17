@@ -1,11 +1,11 @@
 # two player chess in python with Pygame!
 # part one , set up the variables images and game loop
-
+print("hello wolrd")
 import pygame
 
 pygame.init()
-width = 600
-height = 600
+width = 1000
+height = 900
 screen = pygame.display.set_mode([width, height])
 pygame.display.set_caption("Two-Player Pygame Chess!")
 font = pygame.font.Font("freesansbold.ttf", 20)
@@ -182,6 +182,19 @@ def draw_board():
             pygame.draw.rect(
                 screen, "light gray", [700 - (column * 200), row * 100, 100, 100]
             )
+        pygame.draw.rect(screen, "grey", [0, 800, width, 100])
+        pygame.draw.rect(screen, "gold", [0, 800, width, 100], 5)
+        pygame.draw.rect(screen, "gold", [800, 0, 200, height], 5)
+        status_text = [
+            "White: Select a Piece to Move!",
+            "White: Select a Destination!",
+            "Black: Select a Piece to Move!",
+            "Black: Select a Destination!",
+        ]
+        screen.blit(big_font.render(status_text[turn_step], True, "black"), (20, 820))
+        for i in range(9):
+            pygame.draw.line(screen, "black", (0, 100 * i), (800, 100 * i), 2)
+            pygame.draw.line(screen, "black", (100 * i, 0), (100 * i, 800), 2)
 
 
 # main game loop
@@ -189,6 +202,7 @@ run = True
 while run:
     timer.tick(fps)
     screen.fill("dark grey")
+    draw_board()
 
     # event handling
     for event in pygame.event.get():
