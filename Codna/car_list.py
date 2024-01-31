@@ -1,44 +1,76 @@
-class Car:
-    def __init__(self, year, type, color, price):
-        self.year = year
-        self.type = type
-        self.color = color
-        self.price = price
+from cars import Car
+from users import User
 
 
-def main():
-    cars = []
-    with open("car_list.txt", "r") as f:
-        for line in f:
-            year, type, color, price = line.split(",")
-            car = Car(int(year), type, color, int(price))
-            cars.append(car)
+def register_user():
+    name = input("name : ")
+    family = input("last name : ")
+    national_id = input("National Code : ")
+    phone_number = input("Mobile : ")
 
-    print("**لیست خودروهای موجود:**")
+# Validation messages
+
+    if len(name) < 5 or len(name) > 15:
+        print("The name must be at least 5 characters and no more than 15 characters.")
+        return None
+
+    if len(family) > 20:
+        print("The last name must not be more than 20 characters.")
+        return None
+
+    if not phone_number.startswith("09") or len(phone_number) != 11:
+        print("The mobile number must start with 09 and be 11 digits.")
+        return None
+
+    if not len(national_id) == 11:
+        print("The national ID must be 11 digits.")
+        return None
+
+    if len(set(national_id)) < 10:
+        print("The national ID is not valid.")
+        return None
+
+    user = User(name, family, national_id, phone_number)
+    with open("users.txt", "a", encoding="utf-8") as file:
+        file.write(f"{user}\n")
+        return user
+
+
+def show_cars():
+    cars = [
+        Car(1, 2023, "Saman", "White", 10000000),
+        Car(2, 2022, "Pride", "Black", 5000000),
+        Car(3, 2021, "Tiba", "Red", 3000000),
+    ]
     for car in cars:
-        print(f"* سال تولید: {car.year}")
-        print(f"* نوع: {car.type}")
-        print(f"* رنگ: {car.color}")
-        print(f"* قیمت: {car.price}")
+        print("ID:", car.number, "Year:", car.year, "Model:", car.type, "Color:", car.color, "Price:", car.price)
+        return cars
 
-    # ثبت نام کاربر
-    name = input("نام و نام خانوادگی: ")
-    national_code = input("کد ملی: ")
-    phone_number = input("شماره تماس: ")
 
-    # انتخاب خودرو توسط کاربر
-    car_index = int(input("لطفا خودرو مورد نظر خود را انتخاب کنید (1-3): "))
-    car = cars[car_index - 1]
-
-    # پرداخت مبلغ
-    payment = int(input("لطفا مبلغ پرداختی خود را وارد کنید: "))
-
-    # بررسی همخوانی مبلغ واریزی با قیمت خودرو
-    if payment == car.price:
-        print(f"**تبریک! خودروی {car.type} با موفقیت اجاره شد.**")
+def select_car():
+    cars = show_cars()
+    car_number = int(input("Please enter the car number: "))
+    if cars is not None:
+        return cars[car_number - 1]
     else:
-        print(f"مبلغ پرداختی شما با قیمت خودرو همخوانی ندارد.")
+        print("The list of cars is empty!")
+        return None
+
+
+def pay_amount():
+    amount = int(input("Please enter the amount paid: "))
+    return amount
+
+
+def rent_car(user, car, amount):
+    if amount == car.price:
+        print("The car has been rented successfully!")
+    else:
+        print("The amount paid does not match the price of the car.")
 
 
 if __name__ == "__main__":
-    main()
+    user = register_user()
+    car = select_car()
+    amount = pay_amount()
+    rent_car(user, car, amount)
