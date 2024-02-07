@@ -578,10 +578,11 @@ def draw_game_over():
                 "True", "white"), (210, 240))
 
 
+black_options = check_options(black_pieces, black_locations, "black")
+white_options = check_options(white_pieces, white_locations, "white")
 # main game loop
 def main():
-    black_options = check_options(black_pieces, black_locations, "black")
-    white_options = check_options(white_pieces, white_locations, "white")
+
     run = True
     while run:
         timer.tick(fps)
