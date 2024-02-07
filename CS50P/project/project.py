@@ -168,9 +168,6 @@ small_black_images = [
 
 piece_list = ["pawn", "queen", "king", "knight", "rook", "bishop"]
 # check variables/ flashing counter
-counter = 0
-winner = ""
-game_over = False
 
 
 # draw main game board
@@ -581,8 +578,12 @@ def draw_game_over():
 black_options = check_options(black_pieces, black_locations, "black")
 white_options = check_options(white_pieces, white_locations, "white")
 # main game loop
-def main():
 
+
+def main():
+    counter = 0
+    winner = ""
+    game_over = False
     run = True
     while run:
         timer.tick(fps)
