@@ -1,7 +1,7 @@
  """ MR A.M """
 
  # SIMPLE TWO PLAYER CHESS GAME
-    #### Video Demo:  <URL HERE>
+    #### Video Demo:  <https://youtu.be/RSEBKsZQyCM>
     #### Description: A Simple Two Player Chess Game Written with python and using pygame module
 Project Title: PyChess: A Two-Player Chess Game
 
