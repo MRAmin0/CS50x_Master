@@ -1,17 +1,30 @@
 import pytest
-from project import custom_function1, custom_function2  # Import your functions from project.py
+from project import check_valid_move
+
+# Test function for check_valid_move
 
 
-# Test function for custom_function1
-def test_custom_function1():
-    # Test cases for custom_function1
-    assert custom_function1(input_data) == expected_output  # Replace input_data and expected_output with actual test data
+def test_check_valid_move():
+    # Test case 1: Test with a valid move
+    board1 = [['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
+              ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+              ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']]
+    move1 = ((6, 4), (4, 4))  # Moving a pawn from (6, 4) to (4, 4)
+    assert is_valid_move(board1, move1) == True
 
-
-# Test function for custom_function2
-def test_custom_function2():
-    # Test cases for custom_function2
-    assert custom_function2(input_data) == expected_output  # Replace input_data and expected_output with actual test data
-
-
-# You should have test functions for each custom function you've implemented in project.py
+    # Test case 2: Test with an invalid move
+    board2 = [['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
+              ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+              ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']]
+    move2 = ((6, 4), (3, 4))  # Moving a pawn to an invalid position
+    assert is_valid_move(board2, move2) == False
