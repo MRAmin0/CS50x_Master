@@ -1,9 +1,10 @@
-from project import check_valid_move
+import pytest
+from project import check_valid_moves
 
-# Test function for check_valid_move
+# Test function for check_valid_moves
 
 
-def test_check_valid_move():
+def test_check_valid_moves():
     # Test case 1: Test with a valid move
     board1 = [['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
               ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
