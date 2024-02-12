@@ -1,4 +1,3 @@
-import pytest
 from project import check_valid_move
 
 # Test function for check_valid_move
