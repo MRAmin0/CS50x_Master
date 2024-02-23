@@ -21,8 +21,8 @@ def main():
         tablemaker(sys.argv[1])
 
 
-def tablemaker(user):
-    with open(user, "r") as csv_file:
+def tablemaker(user_input):
+    with open(user_input, "r") as csv_file:
         t = csv.DictReader(csv_file, delimiter=",")
         print(tabulate(t, headers=t.fieldnames, tablefmt="grid"))
 
