@@ -5,6 +5,7 @@ from tabulate import tabulate
 
 
 def main():
+    # check command-line arguments
     if len(sys.argv) < 2:
         print("Too few command-line arguments")
         sys.exit(1)
@@ -18,13 +19,16 @@ def main():
         print("Not a CSV file")
         sys.exit(1)
     else:
+        # true mode
         tablemaker(sys.argv[1])
 
 
 def tablemaker(user_input):
+    # import CSV and make a table
     with open(user_input, "r") as csv_file:
-        t = csv.DictReader(csv_file, delimiter=",")
-        print(tabulate(t, headers="keys", tablefmt="grid"))
+        table = csv.DictReader(csv_file, delimiter=",")
+        # pass table as dict and use keys as headers to make a table
+        print(tabulate(table, headers="keys", tablefmt="grid"))
 
 
 if __name__ == "__main__":
