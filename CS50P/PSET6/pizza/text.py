@@ -24,7 +24,7 @@ def main():
 def tablemaker(user_input):
     with open(user_input, "r") as csv_file:
         t = csv.DictReader(csv_file, delimiter=",")
-        print(tabulate(t, headers=t.fieldnames, tablefmt="grid"))
+        print(tabulate(t, headers="keys", tablefmt="grid"))
 
 
 if __name__ == "__main__":
