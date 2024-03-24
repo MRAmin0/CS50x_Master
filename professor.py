@@ -37,8 +37,8 @@ def main():
 def get_level():
     while True:
         try:
-            level = int(input("Level: "))
-            if level in <= 3 and level > 0:
+            level = int(input())
+            if level <= 3 and level > 0:
                 return level
         except ValueError:
             continue
