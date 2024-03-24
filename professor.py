@@ -1,6 +1,6 @@
 from random import randint
 
-levellist = [{1: [0, 9]}, {2: [10, 9]}, {3: [100, 999]}]
+levellist = [{1: [0, 9]}, {2: [10, 99]}, {3: [100, 999]}]
 
 
 def main():
