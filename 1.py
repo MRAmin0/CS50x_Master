@@ -1,20 +1,19 @@
 from random import randint
 
-levellist=[{1: [0,9]}, {2: [10, 9]},{3: [100 , 999]}]
-
+levellist = [{1: [0, 9]}, {2: [10, 9]}, {3: [100, 999]}]
 
 
 def main():
-    slevel=get_level()
-    pset=generate_integer(slevel)
+    slevel = get_level()
+    pset = generate_integer(slevel)
 
-    done=0
+    done = 0
 
     for question in pset:
         life = 0
         while True:
             try:
-                answer = int(input(f"{question}="))
+                answer = int(input(f"{question} = "))
                 a, b = question.strip(" ").split("+")
 
                 if life == 2:
@@ -25,22 +24,21 @@ def main():
                     life += 1
                     print("EEE")
                 else:
-                    done +=1
+                    done += 1
                     life = 0
                     break
-            except ValueError :
+            except ValueError:
                 print("EEE")
-                life +=1
+                life += 1
                 continue
-    print(f"Score:{done}")
-
+    print(f"Score: {done}")
 
 
 def get_level():
     while True:
         try:
             level = int(input("Level: "))
-            if level in [1, 2, 3]:
+            if level in <= 3 and level > 0:
                 return level
         except ValueError:
             continue
@@ -48,6 +46,7 @@ def get_level():
 
 def generate_integer(level):
     pset = []
+
     lower = levellist[level - 1][level][0]
     higher = levellist[level - 1][level][1]
 
@@ -56,5 +55,6 @@ def generate_integer(level):
 
     return pset
 
-if name == "__main__":
+
+if __name__ == "__main__":
     main()
