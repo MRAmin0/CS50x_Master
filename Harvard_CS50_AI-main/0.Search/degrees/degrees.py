@@ -28,7 +28,7 @@ def load_data(directory):
         for row in reader:
             people[row["id"]] = {
                 "name": row["name"],
-                "birth": row["birth"],
+                "birth": row["birth"],ss
                 "movies": set()
             }
             if row["name"].lower() not in names:
