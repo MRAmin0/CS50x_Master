@@ -1,4 +1,4 @@
-# CS50 Project: [CS50x]
+# CS50 Project
 
 This project is part of Harvard's CS50 course and demonstrates the application of key computer science concepts. It is implemented using the C programming language and incorporates several advanced features, including [mention any libraries or special tools you used].
 
